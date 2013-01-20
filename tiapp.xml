@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-    <property name="twitter-consumerKey" type="string"></property>
-    <property name="twitter-consumerSecret" type="string"></property>
-    <property name="acs-oauth-secret-production" type="string">p9EozTsaTC5vhrIEUoAbRujj8Q0WjXg0</property>
-    <property name="acs-oauth-key-production" type="string">O7i9BLPG1Qf5e2IXzx4X01LFdd9sYIYU</property>
-    <property name="acs-api-key-production" type="string">BVjN02m31sIYfKMxW2l09jW2D6JumWbr</property>
-    <property name="acs-oauth-secret-development" type="string">RO83JkBQmBC6qj0gAL051SgvJb8e4Z5k</property>
-    <property name="acs-oauth-key-development" type="string">6mqtm6k6b1gLBhDDKsVW7WsgvFpiZHRS</property>
-    <property name="acs-api-key-development" type="string">EW5V0tH2hmkgkIzYLjNaY7R6c1p8nDnA</property>
+    <property name="twitter-consumerKey" type="string">Dc4QvIADYsMYW9QkUOoQ</property>
+    <property name="twitter-consumerSecret" type="string">TYEGO6Ohmcbi6aB6mFBF3t11WorVcuygrvje8hYM</property>
     <property name="ti.android.bug2373.skipAlert">true</property>
     <property name="ti.android.bug2373.message"/>
     <id>ti.tokyo</id>
