@@ -44,10 +44,7 @@ function Controller() {
                                 title: L("timeline_error_title"),
                                 message: L("timeline_error_post"),
                                 yes: L("timeline_error_yes"),
-                                no: L("timeline_error_no"),
-                                callback: function() {
-                                    doTimeline();
-                                }
+                                no: L("timeline_error_no")
                             });
                         });
                     }
@@ -154,7 +151,7 @@ function Controller() {
             yes: L("timeline_error_yes"),
             no: L("timeline_error_no"),
             callback: function() {
-                doTimeline();
+                $.trigger("timeline:focus");
             }
         }); else {
             $.shadow.animate({
@@ -202,7 +199,7 @@ function Controller() {
                         yes: L("timeline_error_yes"),
                         no: L("timeline_error_no"),
                         callback: function() {
-                            doTimeline();
+                            $.trigger("timeline:focus");
                         }
                     });
                 }

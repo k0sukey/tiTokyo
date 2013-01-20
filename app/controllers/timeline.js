@@ -61,10 +61,7 @@ function doPost() {
 							title: L('timeline_error_title'),
 							message: L('timeline_error_post'),
 							yes: L('timeline_error_yes'),
-							no: L('timeline_error_no'),
-							callback: function(){
-								doTimeline();
-							}
+							no: L('timeline_error_no')
 						});
 					});
 				}
@@ -98,7 +95,7 @@ $.on('timeline:focus', function(){
 			yes: L('timeline_error_yes'),
 			no: L('timeline_error_no'),
 			callback: function(){
-				doTimeline();
+				$.trigger('timeline:focus');
 			}
 		});
 	} else {
@@ -156,7 +153,7 @@ $.on('timeline:focus', function(){
 					yes: L('timeline_error_yes'),
 					no: L('timeline_error_no'),
 					callback: function(){
-						doTimeline();
+						$.trigger('timeline:focus');
 					}
 				});
 			}
