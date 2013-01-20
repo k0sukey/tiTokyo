@@ -1,0 +1,7 @@
+<Alloy>
+	<View id="container">
+		<View ns="Ti.Map" id="map">
+			<Annotation id="annotation" titleid="venue_title" subtitleid="venue_subtitle" latitude="35.662331" longitude="139.728733"/>
+		</View>
+	</View>
+</Alloy>

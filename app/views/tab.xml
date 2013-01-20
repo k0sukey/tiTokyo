@@ -1,0 +1,25 @@
+<Alloy>
+	<View id="container">
+		<View id="line"/>
+		<View id="tabhome" class="tab">
+			<Widget id="iconhome" class="icon" icon="icon-home" src="be.k0suke.fontawesome"/>
+			<Label id="titlehome" class="title">HOME</Label>
+		</View>
+		<View id="tabagenda" class="tab">
+			<Widget id="iconagenda" class="icon" icon="icon-time" src="be.k0suke.fontawesome"/>
+			<Label id="titleagenda" class="title">AGENDA</Label>
+		</View>
+		<View id="tabspeaker" class="tab">
+			<Widget id="iconspeaker" class="icon" icon="icon-bullhorn" src="be.k0suke.fontawesome"/>
+			<Label id="titlespeaker" class="title">SPEAKERS</Label>
+		</View>
+		<View id="tabtimeline" class="tab">
+			<Widget id="icontimeline" class="icon" icon="icon-comments-alt" src="be.k0suke.fontawesome"/>
+			<Label id="titletimeline" class="title">TIMELINE</Label>
+		</View>
+		<View id="tabvenue" class="tab">
+			<Widget id="iconvenue" class="icon" icon="icon-map-marker" src="be.k0suke.fontawesome"/>
+			<Label id="titlevenue" class="title">VENUE</Label>
+		</View>
+	</View>
+</Alloy>

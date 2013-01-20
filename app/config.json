@@ -1,0 +1,11 @@
+{
+    "global": {},
+    "env:development": {},
+    "env:test": {},
+    "env:production": {},
+    "os:ios": {},
+    "os:android": {},
+    "dependencies": {
+        "be.k0suke.fontawesome": "1.0"
+    }
+}

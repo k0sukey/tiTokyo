@@ -1,0 +1,7 @@
+<Alloy>
+	<View id="container">
+		<TextArea id="textarea" value="#TitaniumJP"/>
+		<Button id="buttonpost" titleid="post_post"/>
+		<Button id="buttoncancel" titleid="post_cancel"/>
+	</View>
+</Alloy>

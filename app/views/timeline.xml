@@ -1,0 +1,11 @@
+<Alloy>
+	<View id="base">
+		<ScrollView id="container">
+			<Label id="title">- TIMELINE -</Label>
+		</ScrollView>
+		<View id="buttonpost">
+			<Widget id="iconpost" icon="icon-twitter" src="be.k0suke.fontawesome"/>
+		</View>
+		<View id="shadow"/>
+	</View>
+</Alloy>

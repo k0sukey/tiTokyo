@@ -1,0 +1,22 @@
+'#container': {
+	top: 0,
+	height: '89dp'
+},
+'#background': {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: '65dp',
+	backgroundColor: '#624e35'
+},
+'#line': {
+	top: '65dp',
+	width: Ti.UI.FILL,
+	height: '1dp',
+	backgroundColor: '#fbfdff'	
+},
+'#logo': {
+	width: '86dp',
+	height: '89dp',
+	backgroundImage: '/images/logo.png',
+	backgroundSelectedImage: '/images/logo.png'
+}

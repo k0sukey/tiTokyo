@@ -1,0 +1,15 @@
+<Alloy>
+	<ScrollView id="container">
+		<View id="slideshow">
+			<ImageView id="slide0"/>
+			<ImageView id="slide1"/>
+			<ImageView id="slide2"/>
+			<ImageView id="slide3"/>
+			<ImageView id="slide4"/>
+		</View>
+		<Label id="title">- TOKYO, FEB 16th, 2013 -</Label>
+		<Label class="description" textid="home_description0"/>
+		<Label class="description" textid="home_description1"/>
+		<Label class="description" textid="home_description2"/>
+	</ScrollView>
+</Alloy>

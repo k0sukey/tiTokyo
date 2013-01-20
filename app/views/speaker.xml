@@ -1,0 +1,23 @@
+<Alloy>
+	<ScrollView id="container">
+		<Label id="title">- SPEAKERS -</Label>
+		<Label class="name" textid="speaker_name0"/>
+		<Label class="title" textid="speaker_title0"/>
+		<View class="frame">
+			<ImageView class="photo" image="/images/jeff.png"/>
+			<Label class="description" textid="speaker_description0"/>
+		</View>
+		<Label class="name" textid="speaker_name1"/>
+		<Label class="title" textid="speaker_title1"/>
+		<View class="frame">
+			<ImageView class="photo" image="/images/takechi.png"/>
+			<Label class="description" textid="speaker_description1"/>
+		</View>
+		<Label class="name" textid="speaker_name2"/>
+		<Label class="title" textid="speaker_title2"/>
+		<View class="frame">
+			<ImageView class="photo" image="/images/kota.png"/>
+			<Label class="description" textid="speaker_description2"/>
+		</View>
+	</ScrollView>
+</Alloy>

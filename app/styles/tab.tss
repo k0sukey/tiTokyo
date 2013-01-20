@@ -1,0 +1,67 @@
+'#container': {
+	bottom: 0,
+	height: '46dp',
+	backgroundColor: '#000'
+},
+'#line': {
+	top: '1dp',
+	height: '1dp',
+	backgroundColor: '#333',
+	touchEnabled: false
+},
+'.tab': {
+	width: '20%'
+},
+'#tabhome': {
+	left: 0
+},
+'#tabagenda': {
+	left: expr(Ti.Platform.displayCaps.platformWidth / 5)
+},
+'#tabspeaker': {
+	left: expr(Ti.Platform.displayCaps.platformWidth / 5 * 2)
+},
+'#tabtimeline': {
+	left: expr(Ti.Platform.displayCaps.platformWidth / 5 * 3)
+},
+'#tabvenue': {
+	left: expr(Ti.Platform.displayCaps.platformWidth / 5 * 4)
+},
+'.icon': {
+	top: '6dp',
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: '#fff',
+	shadowColor: '#383838',
+	shadowOffset: {
+		x: 0.0,
+		y: 1.0
+	},
+	textAlign: 'center',
+	font: {
+		fontSize: '20dp'
+	},
+	touchEnabled: false
+},
+'#iconhome': {
+	color: '#00bfff'
+},
+'.title': {
+	bottom: '2dp',
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: '#fff',
+	shadowColor: '#333',
+	shadowOffset: {
+		x: 0.0,
+		y: 1.0
+	},
+	textAlign: 'center',
+	font: {
+		fontSize: '10dp'
+	},
+	touchEnabled: false
+},
+'#titlehome': {
+	color: '#00bfff'
+}

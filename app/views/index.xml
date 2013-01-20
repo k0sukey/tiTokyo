@@ -1,0 +1,8 @@
+<Alloy>
+	<Window navBarHidden="true" exitOnClose="true">
+		<View id="content"/>
+		<Require id="tab" src="tab"/>
+		<View id="modal"/>
+		<Require id="navigation" src="navigation"/>
+	</Window>
+</Alloy>

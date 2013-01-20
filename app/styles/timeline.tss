@@ -1,0 +1,59 @@
+'#base': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	opacity: 0
+},
+'#container': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	contentWidth: Ti.Platform.displayCaps.platformWidth,
+	contentHeight: 'auto',
+	layout: 'vertical',
+	showVerticalScrollIndicator: true
+},
+'#title': {
+	top: '20dp',
+	bottom: '20dp',
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	color: '#383838',
+	shadowColor: '#fff',
+	shadowOffset: {
+		x: 0.0,
+		y: 1.0
+	},
+	textAlign: 'center',
+	font: {
+		fontSize: '24dp',
+		fontWeight: 'bold'
+	}
+},
+'#buttonpost': {
+	top: 0,
+	right: '20dp',
+	width: '44dp',
+	height: '66dp',
+	backgroundImage: '/images/ribbon.png'
+},
+'#iconpost': {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: '#00bfff',
+	shadowColor: '#383838',
+	shadowOffset: {
+		x: 0.0,
+		y: 1.0
+	},
+	textAlign: 'center',
+	font: {
+		fontSize: '20dp'
+	},
+	touchEnabled: false
+},
+'#shadow': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	backgroundColor: '#000',
+	opacity: 0,
+	touchEnabled: false
+}

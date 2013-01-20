@@ -1,0 +1,18 @@
+'#index': {
+	orientation: Ti.UI.PORTRAIT,
+	orientationModes: [ Ti.UI.PORTRAIT ],
+	backgroundImage: '/images/background.png',
+	backgroundRepeat: true
+},
+'#content': {
+	top: '65dp',
+	bottom: '46dp'
+},
+'#modal': {
+	top: '65dp',
+	bottom: 0,
+	backgroundImage: '/images/modal.png',
+	backgroundRepeat: true,
+	opacity: 0,
+	touchEnabled: false
+}

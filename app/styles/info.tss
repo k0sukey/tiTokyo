@@ -1,0 +1,93 @@
+'#container': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	contentWidth: Ti.Platform.displayCaps.platformWidth,
+	contentHeight: 'auto',
+	layout: 'vertical',
+	showVerticalScrollIndicator: true,
+	opacity: 0
+},
+'#title': {
+	top: '20dp',
+	bottom: '20dp',
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	color: '#383838',
+	textAlign: 'center',
+	font: {
+		fontSize: '24dp',
+		fontWeight: 'bold'
+	}
+},
+'#builtby': {
+	right: '10dp',
+	bottom: '20dp',
+	left: '10dp',
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	color: '#383838',
+	shadowColor: '#fff',
+	shadowOffset: {
+		x: 0.0,
+		y: 1.0
+	},
+	textAlign: 'center',
+	font: {
+		fontSize: '14dp',
+		fontWeight: 'bold'
+	}	
+},
+'#specialthanks': {
+	right: '10dp',
+	bottom: '20dp',
+	left: '10dp',
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	color: '#383838',
+	shadowColor: '#fff',
+	shadowOffset: {
+		x: 0.0,
+		y: 1.0
+	},
+	textAlign: 'center',
+	font: {
+		fontSize: '14dp',
+		fontWeight: 'bold'
+	}	
+},
+'.subtitle':{
+	right: '10dp',
+	bottom: '10dp',
+	left: '10dp',
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	color: '#383838',
+	shadowColor: '#fff',
+	shadowOffset: {
+		x: 0.0,
+		y: 1.0
+	},
+	font: {
+		fontSize: '14dp',
+		fontWeight: 'bold'
+	}	
+},
+'.banner': {
+	bottom: '10dp'
+},
+'.description': {
+	right: '10dp',
+	bottom: '10dp',
+	left: '40dp',
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	color: '#383838',
+	shadowColor: '#fff',
+	shadowOffset: {
+		x: 0.0,
+		y: 1.0
+	},
+	font: {
+		fontSize: '14dp'
+	}
+}

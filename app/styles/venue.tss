@@ -1,0 +1,11 @@
+'#container': {
+	opacity: 0
+},
+'#map': {
+	region: {
+		latitude: 35.662331,
+		latitudeDelta: 0.001,
+		longitude: 139.728733,
+		longitudeDelta: 0.001
+	}
+},

@@ -1,0 +1,8 @@
+<Alloy>
+	<View id="container">
+		<ImageView id="icon"/>
+		<Label id="username"/>
+		<Label id="timestamp"/>
+		<Label id="tweet"/>
+	</View>
+</Alloy>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<string name="home_description0">tiTokyo is an all day conference discussing primarily JavaScript, Appcelerator Titanium and DENSO's solution for mobile application connected to vehicles. The event will take place on Saturday, Feb. 16 and entry is free for the first 200 registrants, regardless of your skill level. We welcome beginners and experts alike!</string>
+	<string name="home_description1">Come hear from Appcelerator CEO Jeff Haynie as he discusses the latest Titanium 3.0 release. From Toshihide Takechi, DENSO, introduce DENSO's solution for mobile application connected to vehicles.</string>
+	<string name="home_description2">Additionally, guest speaker Kota Iguchi, Co-Founder of LANICA, will be discussing LANICA’s Platino™ game engine enabling Titanium developers to build mobile game experiences.</string>
+	<string name="home_description3"></string>
+
+	<string name="agenda_description0">Registration</string>
+	<string name="agenda_description1">Appcelerator Keynote (Jeff Haynie, Appcelerator CEO)</string>
+	<string name="agenda_description2">Appcelerator Product Update - Titanium 3.0 (Appcelerator)</string>
+	<string name="agenda_description3">DENSO Presentation (Connected Vehicle World) (Toshihide Takechi, DENSO GM)</string>
+	<string name="agenda_description4">Lunch (Free)</string>
+	<string name="agenda_description5">Appcelerator Product Deep Dive (Speaker TBD)</string>
+	<string name="agenda_description6">Guest Presentation - Lanica (Kota Iguchi, Lanica co-founder)</string>
+	<string name="agenda_description7">Coffee Break</string>
+	<string name="agenda_description8">Q&amp;A from Japan Titanium User Community</string>
+	<string name="agenda_description9">Conference Close - Party (Free)</string>
+
+	<string name="speaker_name0">JEFF HAYNIE</string>
+	<string name="speaker_title0">Chief Executive Officer and Co-Founder of Appcelerator</string>
+	<string name="speaker_description0">Jeff is Co-founder and CEO of Appcelerator. Jeff is a long-time serial entrepreneur, technologist and blogger. Previously, Jeff was Co-founder and CTO of Vocalocity, a software provider in the communications arena and before that, CTO of eHatchery, a digital incubator and off-shoot of Bill Gross’ idealab!. Jeff has worked on numerous standard committees such as IETF and W3C as well as core contributor to a number of important open source technologies such as JBoss and OpenVXI. Jeff served with distinction in the U.S. Navy.</string>
+	<string name="speaker_name1">TOSHIHIDE TAKECHI</string>
+	<string name="speaker_title1">General Manager &amp; Project Director Service R&amp;D Dept. Information and Communication Technology Business Unit DENSO CORPORATION</string>
+	<string name="speaker_description1">He has been responsible for the development of foreign luxury car navigation system for past decade. He manage and launched a several project such as Mercedez Benz, GM, Ford, Hyundai, Jaguar, and Volvo. Since January 2012, he became responsible for the product planning and development of telematic services to expand the connected vehile world. Recently, he dedicate most of his energy into his hobby \"weekend farming\". According to him, there is a similarity between IT industry and agriculture.</string>
+	<string name="speaker_name2">KOTA IGUCHI</string>
+	<string name="speaker_title2">Lanica Co-Founder</string>
+	<string name="speaker_description2">Kota Iguchi, is the founder and CEO of Infosia Inc. based in Hokkaido, Japan. Working as a software developer for 12 years in Japan, Kota has experience in a diverse area of developing enterprise software and embedded systems using C\/C++, C# and Java. Kota is also the founder and developer of couple of open-source projects for gaming like e3roid, emo-framework and QuickTiGame2d. Kota brings his experience in mobile game engine development to Lanica. Based out of Hokkaido, Kota is the Architect of Lanica’s game engine.</string>
+
+	<string name="timeline_error_title">Error</string>
+	<string name="timeline_error_yes">Retry</string>
+	<string name="timeline_error_no">Cancel</string>
+	<string name="timeline_error_network">Network is offline now.</string>
+	<string name="timeline_error_xhr">Data was unable to get.</string>
+	<string name="timeline_error_post">Was not able to tweet.</string>
+
+	<string name="venue_title">Belle Salle Roppongi</string>
+	<string name="venue_subtitle">7-18-18, Roppongi, Minatoku</string>
+
+	<string name="post_post">Tweet</string>
+	<string name="post_cancel">Cancel</string>
+</resources>

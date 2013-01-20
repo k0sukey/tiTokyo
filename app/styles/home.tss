@@ -1,0 +1,76 @@
+'#container': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	contentWidth: Ti.Platform.displayCaps.platformWidth,
+	contentHeight: 'auto',
+	layout: 'vertical',
+	showVerticalScrollIndicator: true,
+	opacity: 0
+},
+'#slideshow': {
+	top: 0,
+	width: Ti.Platform.displayCaps.platformWidth,
+	height: expr(Ti.Platform.displayCaps.platformWidth * 238 / 677)
+},
+'#slide0': {
+	image: '/images/slide0.jpg',
+	width: Ti.Platform.displayCaps.platformWidth,
+	height: expr(Ti.Platform.displayCaps.platformWidth * 238 / 677)
+},
+'#slide1': {
+	image: '/images/slide1.jpg',
+	width: Ti.Platform.displayCaps.platformWidth,
+	height: expr(Ti.Platform.displayCaps.platformWidth * 238 / 677),
+	opacity: 0
+},
+'#slide2': {
+	image: '/images/slide2.jpg',
+	width: Ti.Platform.displayCaps.platformWidth,
+	height: expr(Ti.Platform.displayCaps.platformWidth * 238 / 677),
+	opacity: 0
+},
+'#slide3': {
+	image: '/images/slide3.jpg',
+	width: Ti.Platform.displayCaps.platformWidth,
+	height: expr(Ti.Platform.displayCaps.platformWidth * 238 / 677),
+	opacity: 0
+},
+'#slide4': {
+	image: '/images/slide4.jpg',
+	width: Ti.Platform.displayCaps.platformWidth,
+	height: expr(Ti.Platform.displayCaps.platformWidth * 238 / 677),
+	opacity: 0
+},
+'#title': {
+	top: '20dp',
+	bottom: '20dp',
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	color: '#383838',
+	shadowColor: '#fff',
+	shadowOffset: {
+		x: 0.0,
+		y: 1.0
+	},
+	textAlign: 'center',
+	font: {
+		fontSize: '24dp',
+		fontWeight: 'bold'
+	}
+},
+'.description': {
+	right: '10dp',
+	bottom: '10dp',
+	left: '10dp',
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	color: '#383838',
+	shadowColor: '#fff',
+	shadowOffset: {
+		x: 0.0,
+		y: 1.0
+	},
+	font: {
+		fontSize: '14dp'
+	}
+}

@@ -1,0 +1,7 @@
+<Alloy>
+	<View id="container">
+		<View id="background"/>
+		<View id="line"/>
+		<Button id="logo"/>
+	</View>
+</Alloy>

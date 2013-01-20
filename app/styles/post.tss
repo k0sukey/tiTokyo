@@ -1,0 +1,65 @@
+'#container': {
+	top: -10,
+	left: '10dp',
+	right: '10dp',
+	height: '160dp',
+	backgroundImage: '/images/modal.png',
+	backgroundRepeat: true,
+	borderColor: '#fff',
+	borderWidth: 1,
+	borderRadius: 4,
+	opacity: 0
+},
+'#textarea': {
+	top: '26dp',
+	left: '10dp',
+	right: '10dp',
+	height: '80dp',
+	borderRadius: 4,
+	color: '#383838',
+	font: {
+		fontSize: '14dp'
+	}	
+},
+'#buttonpost': {
+	right: '10dp',
+	bottom: '10dp',
+	width: '100dp',
+	height: '34dp',
+	backgroundImage: '/images/button.png',
+	backgroundRepeat: true,
+	borderColor: '#fff',
+	borderWidth: 1,
+	borderRadius: 4,
+	color: '#fff',
+	shadowColor: '#383838',
+	shadowOffset: {
+		x: 0.0,
+		y: 1.0
+	},
+	textAlign: 'center',
+	font: {
+		fontSize: '14dp'
+	}
+},
+'#buttoncancel': {
+	left: '10dp',
+	bottom: '10dp',
+	width: '100dp',
+	height: '34dp',
+	backgroundImage: '/images/button.png',
+	backgroundRepeat: true,
+	borderColor: '#fff',
+	borderWidth: 1,
+	borderRadius: 4,
+	color: '#fff',
+	shadowColor: '#383838',
+	shadowOffset: {
+		x: 0.0,
+		y: 1.0
+	},
+	textAlign: 'center',
+	font: {
+		fontSize: '14dp'
+	}
+}
