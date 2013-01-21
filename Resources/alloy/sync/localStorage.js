@@ -7,19 +7,23 @@ function guid() {
 }
 
 function InitAdapter(config) {
-    throw "No support for localStorage persistence in non MobileWeb environments.";
+    throw "localStorage persistence supported only with MobileWeb.";
 }
 
 function Sync(model, method, opts) {
     function storeModel(data) {
         localStorage.setItem(name, JSON.stringify(data));
     }
-    var name = model.config.adapter.collection_name, data = model.config.data;
+    var name = model.config.adapter.collection_name, data = model.config.data, resp = null;
     switch (method) {
       case "create":
-        model.id || (model.id = model.attributes.id = guid());
+        if (!model.id) {
+            model.id = guid();
+            model.set(model.idAttribute, model.id);
+        }
         data[model.id] = model;
         storeModel(data);
+        resp = model.toJSON();
         break;
       case "read":
         var store = localStorage.getItem(name), store_data = store && JSON.parse(store) || {}, len = 0;
@@ -29,16 +33,22 @@ function Sync(model, method, opts) {
             len++;
         }
         model.length = len;
-        model.trigger("fetch");
+        len === 1 ? resp = model.models[0] : resp = model.models;
         break;
       case "update":
         data[model.id] = model;
         storeModel(data);
+        resp = model.toJSON();
         break;
       case "delete":
         delete data[model.id];
         storeModel(data);
+        resp = model.toJSON();
     }
+    if (resp) {
+        _.isFunction(opts.success) && opts.success(resp);
+        method === "read" && model.trigger("fetch");
+    } else _.isFunction(opts.error) && opts.error("Record not found");
 }
 
 var _ = require("alloy/underscore")._;

@@ -19,7 +19,7 @@ function Controller() {
         width: Ti.UI.FILL,
         height: Ti.UI.SIZE,
         color: "#383838",
-        textAlign: "center",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
         font: {
             fontSize: "24dp",
             fontWeight: "bold"
@@ -40,7 +40,7 @@ function Controller() {
             x: 0,
             y: 1
         },
-        textAlign: "center",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
         font: {
             fontSize: "14dp",
             fontWeight: "bold"
@@ -61,7 +61,7 @@ function Controller() {
             x: 0,
             y: 1
         },
-        textAlign: "center",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
         font: {
             fontSize: "14dp",
             fontWeight: "bold"

@@ -24,7 +24,7 @@ function Controller() {
             longitudeDelta: 0.001
         },
         annotations: __alloyId45,
-        ns: "Ti.Map",
+        ns: Ti.Map,
         id: "map"
     }), "View", $.__views.container);
     $.__views.container.add($.__views.map);

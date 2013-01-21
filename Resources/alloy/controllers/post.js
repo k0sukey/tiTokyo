@@ -46,7 +46,7 @@ function Controller() {
             x: 0,
             y: 1
         },
-        textAlign: "center",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
         font: {
             fontSize: "14dp"
         },
@@ -70,7 +70,7 @@ function Controller() {
             x: 0,
             y: 1
         },
-        textAlign: "center",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
         font: {
             fontSize: "14dp"
         },

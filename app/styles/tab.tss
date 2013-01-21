@@ -16,16 +16,16 @@
 	left: 0
 },
 '#tabagenda': {
-	left: expr(Ti.Platform.displayCaps.platformWidth / 5)
+	left: Alloy.CFG.tab.agendaLeft
 },
 '#tabspeaker': {
-	left: expr(Ti.Platform.displayCaps.platformWidth / 5 * 2)
+	left: Alloy.CFG.tab.speakerLeft
 },
 '#tabtimeline': {
-	left: expr(Ti.Platform.displayCaps.platformWidth / 5 * 3)
+	left: Alloy.CFG.tab.timelineLeft
 },
 '#tabvenue': {
-	left: expr(Ti.Platform.displayCaps.platformWidth / 5 * 4)
+	left: Alloy.CFG.tab.venueLeft
 },
 '.icon': {
 	top: '6dp',
@@ -37,7 +37,7 @@
 		x: 0.0,
 		y: 1.0
 	},
-	textAlign: 'center',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 	font: {
 		fontSize: '20dp'
 	},
@@ -56,7 +56,7 @@
 		x: 0.0,
 		y: 1.0
 	},
-	textAlign: 'center',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 	font: {
 		fontSize: '10dp'
 	},

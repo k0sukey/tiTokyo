@@ -13,7 +13,7 @@
 	width: Ti.UI.FILL,
 	height: Ti.UI.SIZE,
 	color: '#383838',
-	textAlign: 'center',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 	font: {
 		fontSize: '24dp',
 		fontWeight: 'bold'
@@ -31,7 +31,7 @@
 		x: 0.0,
 		y: 1.0
 	},
-	textAlign: 'center',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 	font: {
 		fontSize: '14dp',
 		fontWeight: 'bold'
@@ -49,7 +49,7 @@
 		x: 0.0,
 		y: 1.0
 	},
-	textAlign: 'center',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 	font: {
 		fontSize: '14dp',
 		fontWeight: 'bold'

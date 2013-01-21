@@ -60,7 +60,7 @@ function Controller() {
             x: 0,
             y: 1
         },
-        textAlign: "center",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
         font: {
             fontSize: "20dp"
         },
@@ -79,7 +79,7 @@ function Controller() {
             x: 0,
             y: 1
         },
-        textAlign: "center",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
         font: {
             fontSize: "10dp"
         },
@@ -90,7 +90,7 @@ function Controller() {
     $.__views.tabhome.add($.__views.titlehome);
     $.__views.tabagenda = A$(Ti.UI.createView({
         width: "20%",
-        left: Ti.Platform.displayCaps.platformWidth / 5,
+        left: Alloy.CFG.tab.agendaLeft,
         id: "tabagenda"
     }), "View", $.__views.container);
     $.__views.container.add($.__views.tabagenda);
@@ -104,7 +104,7 @@ function Controller() {
             x: 0,
             y: 1
         },
-        textAlign: "center",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
         font: {
             fontSize: "20dp"
         },
@@ -123,7 +123,7 @@ function Controller() {
             x: 0,
             y: 1
         },
-        textAlign: "center",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
         font: {
             fontSize: "10dp"
         },
@@ -134,7 +134,7 @@ function Controller() {
     $.__views.tabagenda.add($.__views.titleagenda);
     $.__views.tabspeaker = A$(Ti.UI.createView({
         width: "20%",
-        left: Ti.Platform.displayCaps.platformWidth / 5 * 2,
+        left: Alloy.CFG.tab.speakerLeft,
         id: "tabspeaker"
     }), "View", $.__views.container);
     $.__views.container.add($.__views.tabspeaker);
@@ -148,7 +148,7 @@ function Controller() {
             x: 0,
             y: 1
         },
-        textAlign: "center",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
         font: {
             fontSize: "20dp"
         },
@@ -167,7 +167,7 @@ function Controller() {
             x: 0,
             y: 1
         },
-        textAlign: "center",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
         font: {
             fontSize: "10dp"
         },
@@ -178,7 +178,7 @@ function Controller() {
     $.__views.tabspeaker.add($.__views.titlespeaker);
     $.__views.tabtimeline = A$(Ti.UI.createView({
         width: "20%",
-        left: Ti.Platform.displayCaps.platformWidth / 5 * 3,
+        left: Alloy.CFG.tab.timelineLeft,
         id: "tabtimeline"
     }), "View", $.__views.container);
     $.__views.container.add($.__views.tabtimeline);
@@ -192,7 +192,7 @@ function Controller() {
             x: 0,
             y: 1
         },
-        textAlign: "center",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
         font: {
             fontSize: "20dp"
         },
@@ -211,7 +211,7 @@ function Controller() {
             x: 0,
             y: 1
         },
-        textAlign: "center",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
         font: {
             fontSize: "10dp"
         },
@@ -222,7 +222,7 @@ function Controller() {
     $.__views.tabtimeline.add($.__views.titletimeline);
     $.__views.tabvenue = A$(Ti.UI.createView({
         width: "20%",
-        left: Ti.Platform.displayCaps.platformWidth / 5 * 4,
+        left: Alloy.CFG.tab.venueLeft,
         id: "tabvenue"
     }), "View", $.__views.container);
     $.__views.container.add($.__views.tabvenue);
@@ -236,7 +236,7 @@ function Controller() {
             x: 0,
             y: 1
         },
-        textAlign: "center",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
         font: {
             fontSize: "20dp"
         },
@@ -255,7 +255,7 @@ function Controller() {
             x: 0,
             y: 1
         },
-        textAlign: "center",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
         font: {
             fontSize: "10dp"
         },

@@ -10,35 +10,35 @@
 '#slideshow': {
 	top: 0,
 	width: Ti.Platform.displayCaps.platformWidth,
-	height: expr(Ti.Platform.displayCaps.platformWidth * 238 / 677)
+	height: Alloy.CFG.home.slideHeight
 },
 '#slide0': {
 	image: '/images/slide0.jpg',
 	width: Ti.Platform.displayCaps.platformWidth,
-	height: expr(Ti.Platform.displayCaps.platformWidth * 238 / 677)
+	height: Alloy.CFG.home.slideHeight
 },
 '#slide1': {
 	image: '/images/slide1.jpg',
 	width: Ti.Platform.displayCaps.platformWidth,
-	height: expr(Ti.Platform.displayCaps.platformWidth * 238 / 677),
+	height: Alloy.CFG.home.slideHeight,
 	opacity: 0
 },
 '#slide2': {
 	image: '/images/slide2.jpg',
 	width: Ti.Platform.displayCaps.platformWidth,
-	height: expr(Ti.Platform.displayCaps.platformWidth * 238 / 677),
+	height: Alloy.CFG.home.slideHeight,
 	opacity: 0
 },
 '#slide3': {
 	image: '/images/slide3.jpg',
 	width: Ti.Platform.displayCaps.platformWidth,
-	height: expr(Ti.Platform.displayCaps.platformWidth * 238 / 677),
+	height: Alloy.CFG.home.slideHeight,
 	opacity: 0
 },
 '#slide4': {
 	image: '/images/slide4.jpg',
 	width: Ti.Platform.displayCaps.platformWidth,
-	height: expr(Ti.Platform.displayCaps.platformWidth * 238 / 677),
+	height: Alloy.CFG.home.slideHeight,
 	opacity: 0
 },
 '#title': {
@@ -52,7 +52,7 @@
 		x: 0.0,
 		y: 1.0
 	},
-	textAlign: 'center',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 	font: {
 		fontSize: '24dp',
 		fontWeight: 'bold'

@@ -24,11 +24,11 @@ exports.M = function(name, modelDesc, migrations) {
         }
     }, extendClass = {};
     migrations && (extendClass.migrations = migrations);
-    _.isFunction(adapter.beforeModelCreate) && (config = adapter.beforeModelCreate(config) || config);
+    _.isFunction(adapter.beforeModelCreate) && (config = adapter.beforeModelCreate(config, name) || config);
     var Model = Backbone.Model.extend(extendObj, extendClass);
     Model.prototype.config = config;
-    _.isFunction(adapter.afterModelCreate) && adapter.afterModelCreate(Model);
     _.isFunction(modelDesc.extendModel) && (Model = modelDesc.extendModel(Model) || Model);
+    _.isFunction(adapter.afterModelCreate) && adapter.afterModelCreate(Model, name);
     return Model;
 };
 
@@ -149,4 +149,4 @@ exports.Collections.instance = function(name) {
 
 exports.CFG = require("alloy/CFG");
 
-exports.version = "0.3.4";
+exports.version = "0.3.6";

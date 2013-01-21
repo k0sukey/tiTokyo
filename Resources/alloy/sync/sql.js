@@ -71,17 +71,22 @@ function Sync(model, method, opts) {
     var table = model.config.adapter.collection_name, columns = model.config.columns, resp = null;
     switch (method) {
       case "create":
-        var names = [], values = [], q = [];
-        for (var k in columns) {
-            names.push(k);
-            values.push(model.get(k));
-            q.push("?");
-        }
-        var id = guid(), sql = "INSERT INTO " + table + " (" + names.join(",") + ",id) VALUES (" + q.join(",") + ",?)";
-        values.push(id);
-        db.execute(sql, values);
-        model.id = id;
-        resp = model.toJSON();
+        resp = function() {
+            if (!model.id) {
+                model.id = guid();
+                model.set(model.idAttribute, model.id);
+            }
+            var names = [], values = [], q = [];
+            for (var k in columns) {
+                names.push(k);
+                values.push(model.get(k));
+                q.push("?");
+            }
+            var sql = "INSERT INTO " + table + " (" + names.join(",") + ",id) VALUES (" + q.join(",") + ",?)";
+            values.push(model.id);
+            db.execute(sql, values);
+            return model.toJSON();
+        }();
         break;
       case "read":
         var sql = "SELECT * FROM " + table, rs = db.execute(sql), len = 0, values = [];

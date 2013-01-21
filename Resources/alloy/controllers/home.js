@@ -16,21 +16,21 @@ function Controller() {
     $.__views.slideshow = A$(Ti.UI.createView({
         top: 0,
         width: Ti.Platform.displayCaps.platformWidth,
-        height: Ti.Platform.displayCaps.platformWidth * 238 / 677,
+        height: Alloy.CFG.home.slideHeight,
         id: "slideshow"
     }), "View", $.__views.container);
     $.__views.container.add($.__views.slideshow);
     $.__views.slide0 = A$(Ti.UI.createImageView({
         image: "/images/slide0.jpg",
         width: Ti.Platform.displayCaps.platformWidth,
-        height: Ti.Platform.displayCaps.platformWidth * 238 / 677,
+        height: Alloy.CFG.home.slideHeight,
         id: "slide0"
     }), "ImageView", $.__views.slideshow);
     $.__views.slideshow.add($.__views.slide0);
     $.__views.slide1 = A$(Ti.UI.createImageView({
         image: "/images/slide1.jpg",
         width: Ti.Platform.displayCaps.platformWidth,
-        height: Ti.Platform.displayCaps.platformWidth * 238 / 677,
+        height: Alloy.CFG.home.slideHeight,
         opacity: 0,
         id: "slide1"
     }), "ImageView", $.__views.slideshow);
@@ -38,7 +38,7 @@ function Controller() {
     $.__views.slide2 = A$(Ti.UI.createImageView({
         image: "/images/slide2.jpg",
         width: Ti.Platform.displayCaps.platformWidth,
-        height: Ti.Platform.displayCaps.platformWidth * 238 / 677,
+        height: Alloy.CFG.home.slideHeight,
         opacity: 0,
         id: "slide2"
     }), "ImageView", $.__views.slideshow);
@@ -46,7 +46,7 @@ function Controller() {
     $.__views.slide3 = A$(Ti.UI.createImageView({
         image: "/images/slide3.jpg",
         width: Ti.Platform.displayCaps.platformWidth,
-        height: Ti.Platform.displayCaps.platformWidth * 238 / 677,
+        height: Alloy.CFG.home.slideHeight,
         opacity: 0,
         id: "slide3"
     }), "ImageView", $.__views.slideshow);
@@ -54,7 +54,7 @@ function Controller() {
     $.__views.slide4 = A$(Ti.UI.createImageView({
         image: "/images/slide4.jpg",
         width: Ti.Platform.displayCaps.platformWidth,
-        height: Ti.Platform.displayCaps.platformWidth * 238 / 677,
+        height: Alloy.CFG.home.slideHeight,
         opacity: 0,
         id: "slide4"
     }), "ImageView", $.__views.slideshow);
@@ -70,7 +70,7 @@ function Controller() {
             x: 0,
             y: 1
         },
-        textAlign: "center",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
         font: {
             fontSize: "24dp",
             fontWeight: "bold"
