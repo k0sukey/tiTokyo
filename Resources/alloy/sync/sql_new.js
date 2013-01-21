@@ -239,7 +239,7 @@ var _ = require("alloy/underscore")._, util = require("alloy/sync/util"), ALLOY_
 
 module.exports.beforeModelCreate = function(config, name) {
     if (cache.config[name]) return cache.config[name];
-    if (Ti.Platform.osname === "mobileweb" || typeof Ti.Database == "undefined") throw "No support for Titanium.Database in MobileWeb environment.";
+    if (typeof Ti.Database == "undefined") throw "No support for Titanium.Database in MobileWeb environment.";
     config.adapter.db_file && installDatabase(config);
     if (!config.adapter.idAttribute) {
         Ti.API.info("No config.adapter.idAttribute specified for table \"" + config.adapter.collection_name + "\"");

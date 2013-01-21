@@ -40,16 +40,9 @@ exports.fadeOut = function(to, duration, finishCallback) {
 };
 
 exports.popIn = function(view, finishCallback) {
-    var animate1 = Ti.UI.createAnimation({
-        opacity: 1,
-        transform: Ti.UI.create2DMatrix().scale(1.05, 1.05),
-        duration: 200
-    }), animate2 = Ti.UI.createAnimation({
-        transform: Ti.UI.create2DMatrix(),
-        duration: 300
-    });
-    exports.chainAnimate(view, [ animate1, animate2 ], finishCallback);
-    view = null;
+    view.transform = Ti.UI.create2DMatrix();
+    view.opacity = 1;
+    return;
 };
 
 exports.shake = function(view, delay, finishCallback) {

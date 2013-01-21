@@ -18,7 +18,7 @@ function Controller() {
                 $.base.remove(post.getView());
                 post = null;
                 var activityIndicator = Ti.UI.createActivityIndicator({
-                    style: Ti.UI.iPhone.ActivityIndicatorStyle.BIG
+                    style: Ti.UI.ActivityIndicatorStyle.BIG
                 });
                 $.base.add(activityIndicator);
                 activityIndicator.show();
@@ -163,7 +163,7 @@ function Controller() {
                 });
             });
             var activityIndicator = Ti.UI.createActivityIndicator({
-                style: Ti.UI.iPhone.ActivityIndicatorStyle.BIG
+                style: Ti.UI.ActivityIndicatorStyle.BIG
             });
             $.base.add(activityIndicator);
             activityIndicator.show();

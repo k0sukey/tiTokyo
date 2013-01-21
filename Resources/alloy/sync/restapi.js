@@ -142,7 +142,7 @@ function Sync(model, method, opts) {
     }
 }
 
-var RestAPIBaseUrl = null, _ = require("alloy/underscore")._;
+var RestAPIBaseUrl = null, Alloy = require("alloy"), Backbone = Alloy.Backbone, _ = Alloy._, A$ = Alloy.A;
 
 module.exports.sync = Sync;
 
