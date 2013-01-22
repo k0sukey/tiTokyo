@@ -9,11 +9,12 @@ function Controller() {
     $.addTopLevelView($.__views.container);
     var __alloyId45 = [];
     $.__views.annotation = A$(Ti.Map.createAnnotation({
+        latitude: 35.662331,
+        longitude: 139.728733,
+        animate: !0,
         id: "annotation",
         titleid: "venue_title",
-        subtitleid: "venue_subtitle",
-        latitude: "35.662331",
-        longitude: "139.728733"
+        subtitleid: "venue_subtitle"
     }), "Annotation", null);
     __alloyId45.push($.__views.annotation);
     $.__views.map = A$(Ti.Map.createView({
@@ -23,6 +24,9 @@ function Controller() {
             longitude: 139.728733,
             longitudeDelta: 0.001
         },
+        animate: !0,
+        regionFit: !0,
+        userLocation: !0,
         annotations: __alloyId45,
         ns: Ti.Map,
         id: "map"

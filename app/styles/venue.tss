@@ -7,5 +7,13 @@
 		latitudeDelta: 0.001,
 		longitude: 139.728733,
 		longitudeDelta: 0.001
-	}
+	},
+	animate: true,
+	regionFit: true,
+	userLocation: true
 },
+'#annotation': {
+	latitude: 35.662331,
+	longitude: 139.728733,
+	animate: true
+}
