@@ -33,8 +33,10 @@
 	<string name="timeline_error_xhr">Data was unable to get.</string>
 	<string name="timeline_error_post">Was not able to tweet.</string>
 
-	<string name="venue_title">Belle Salle Roppongi</string>
-	<string name="venue_subtitle">7-18-18, Roppongi, Minatoku</string>
+	<string name="venue_description0">The event will be held at the beautiful Belle Salle ROPPONGI conference building. It's only a 2 minute walk from Hibiya line at Roppongi station.</string>
+	<string name="venue_description1">Sumitomo Fudousan Roppongi Street Building 1F・B1F, 7-18-18, Roppongi, Minatoku</string>
+	<string name="venue_annotation_title">Belle Salle Roppongi</string>
+	<string name="venue_annotation_subtitle">7-18-18, Roppongi, Minatoku</string>
 
 	<string name="post_post">Tweet</string>
 	<string name="post_cancel">Cancel</string>

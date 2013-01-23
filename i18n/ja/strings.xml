@@ -32,8 +32,10 @@
 	<string name="timeline_error_xhr">データが取得できませんでした</string>
 	<string name="timeline_error_post">ツイートに失敗しました</string>
 
-	<string name="venue_title">ベルサール六本木 イベントホール</string>
-	<string name="venue_subtitle">東京都港区六本木 7-18-18</string>
+	<string name="venue_description0">本イベントはベルサール六本木イベントホールにて開催します。日比谷線六本木駅から徒歩 2 分です。</string>
+	<string name="venue_description1">東京都港区六本木 7-18-18 住友不動産六本木通ビル 1F・B1</string>
+	<string name="venue_annotation_title">ベルサール六本木 イベントホール</string>
+	<string name="venue_annotation_subtitle">東京都港区六本木 7-18-18</string>
 
 	<string name="post_post">ツイート</string>
 	<string name="post_cancel">キャンセル</string>

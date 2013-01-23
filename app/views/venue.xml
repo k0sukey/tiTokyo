@@ -1,7 +1,10 @@
 <Alloy>
 	<View id="container">
+		<Label id="title">- VENUE -</Label>
+		<Label class="description" textid="venue_description0"/>
+		<Label class="description" textid="venue_description1"/>
 		<View ns="Ti.Map" id="map">
-			<Annotation id="annotation" titleid="venue_title" subtitleid="venue_subtitle"/>
+			<Annotation id="annotation" titleid="venue_annotation_title" subtitleid="venue_annotation_subtitle"/>
 		</View>
 	</View>
 </Alloy>
