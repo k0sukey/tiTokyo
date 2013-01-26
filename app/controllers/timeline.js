@@ -7,6 +7,61 @@ var twitter = Social.create({
 	consumerSecret: Ti.App.Properties.getString('twitter-consumerSecret')
 });
 
+function doTimeline() {
+	if (!Ti.Network.online) {
+		Dialogs.confirm({
+			title: L('timeline_error_title'),
+			message: L('timeline_error_network'),
+			yes: L('timeline_error_yes'),
+			no: L('timeline_error_no'),
+			callback: function(){
+				$.trigger('timeline:focus');
+			}
+		});
+
+		return;
+	}
+
+	Alloy.Globals.progress.trigger('progress:show', function(){
+		var timeline = Alloy.createCollection('timeline');
+		timeline.fetch({
+			success: function(collection, data){
+				var children = $.container.getChildren();
+				_.each(children, function(child, index){
+					if (index > 0) {
+						$.container.remove(child);
+					}
+				});
+
+				_.each(data, function(_item){
+					if (_.isArray(_item)) {
+						_.each(_item, function(item){
+							var tweet = Alloy.createController('tweet', item);
+							$.container.add(tweet.getView());
+							Animation.fadeIn(tweet.getView(), 200);
+						});
+					}
+				});
+
+				Alloy.Globals.progress.trigger('progress:dismiss');
+			},
+			error: function(collection, data){
+				Alloy.Globals.progress.trigger('progress:dismiss');
+
+				Dialogs.confirm({
+					title: L('timeline_error_title'),
+					message: L('timeline_error_xhr'),
+					yes: L('timeline_error_yes'),
+					no: L('timeline_error_no'),
+					callback: function(){
+						$.trigger('timeline:focus');
+					}
+				});
+			}
+		});
+	});
+}
+
 function doPost() {
 	var post = Alloy.createController('post');
 	$.base.add(post.getView());
@@ -29,43 +84,31 @@ function doPost() {
 			$.base.remove(post.getView());
 			post = null;
 
-			var activityIndicator = Ti.UI.createActivityIndicator({
-				style: OS_IOS ? Ti.UI.iPhone.ActivityIndicatorStyle.BIG : Ti.UI.ActivityIndicatorStyle.BIG
-			});
-			$.base.add(activityIndicator);
+			Animation.fadeOut($.shadow, 200);
 
-			activityIndicator.show();
-
-			twitter.share({
-				message: e.message,
-				success: function(e){
-					activityIndicator.hide();
-					$.base.remove(activityIndicator);
-
-					Animation.fadeOut($.shadow, 200, function(){
-						$.shadow.applyProperties({
-							touchEnabled: false
-						});
+			var share = (function(){
+				Alloy.Globals.progress.trigger('progress:show', function(){
+					twitter.share({
+						message: e.message,
+						success: function(e){
+							Alloy.Globals.progress.trigger('progress:dismiss');
+						},
+						error: function(e){
+							Alloy.Globals.progress.trigger('progress:dismiss', function(){
+								Dialogs.confirm({
+									title: L('timeline_error_title'),
+									message: L('timeline_error_post'),
+									yes: L('timeline_error_yes'),
+									no: L('timeline_error_no'),
+									callback: function(){
+										share();
+									}
+								});
+							});
+						}
 					});
-				},
-				error: function(e){
-					activityIndicator.hide();
-					$.base.remove(activityIndicator);
-
-					Animation.fadeOut($.shadow, 200, function(){
-						$.shadow.applyProperties({
-							touchEnabled: false
-						});
-
-						Dialogs.confirm({
-							title: L('timeline_error_title'),
-							message: L('timeline_error_post'),
-							yes: L('timeline_error_yes'),
-							no: L('timeline_error_no')
-						});
-					});
-				}
-			});
+				});
+			})();
 		});
 	});
 
@@ -88,77 +131,7 @@ $.buttonpost.on('click', function(){
 });
 
 $.on('timeline:focus', function(){
-	if (!Ti.Network.online) {
-		Dialogs.confirm({
-			title: L('timeline_error_title'),
-			message: L('timeline_error_network'),
-			yes: L('timeline_error_yes'),
-			no: L('timeline_error_no'),
-			callback: function(){
-				$.trigger('timeline:focus');
-			}
-		});
-	} else {
-		$.shadow.animate({
-			opacity: 0.4,
-			duartion: 200
-		}, function(){
-			$.shadow.applyProperties({
-				touchEnabled: true
-			});
-		});
-
-		var activityIndicator = Ti.UI.createActivityIndicator({
-			style: OS_IOS ? Ti.UI.iPhone.ActivityIndicatorStyle.BIG : Ti.UI.ActivityIndicatorStyle.BIG
-		});
-		$.base.add(activityIndicator);
-
-		activityIndicator.show();
-
-		var timeline = Alloy.createCollection('timeline');
-		timeline.fetch({
-			success: function(collection, data){
-				Animation.fadeOut($.shadow, 200, function(){
-					activityIndicator.hide();
-					$.base.remove(activityIndicator);
-
-					$.shadow.applyProperties({
-						touchEnabled: false
-					});
-				});
-
-				_.each(data, function(_item){
-					if (_.isArray(_item)) {
-						_.each(_item, function(item){
-							var tweet = Alloy.createController('tweet', item);
-							$.container.add(tweet.getView());
-							Animation.fadeIn(tweet.getView(), 200);
-						});
-					}
-				});
-			},
-			error: function(collection, data){
-				Animation.fadeOut($.shadow, 200, function(){
-					activityIndicator.hide();
-					$.base.remove(activityIndicator);
-
-					$.shadow.applyProperties({
-						touchEnabled: false
-					});
-				});
-
-				Dialogs.confirm({
-					title: L('timeline_error_title'),
-					message: L('timeline_error_xhr'),
-					yes: L('timeline_error_yes'),
-					no: L('timeline_error_no'),
-					callback: function(){
-						$.trigger('timeline:focus');
-					}
-				});
-			}
-		});
-	}
+	doTimeline();
 
 	$.container.applyProperties({
 		scrollingEnabled: true

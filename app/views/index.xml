@@ -4,5 +4,9 @@
 		<Require id="tab" src="tab"/>
 		<View id="modal"/>
 		<Require id="navigation" src="navigation"/>
+		<View id="progress">
+			<View id="shadow"/>
+			<ActivityIndicator id="indicator"/>
+		</View>
 	</Window>
 </Alloy>

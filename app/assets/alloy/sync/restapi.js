@@ -192,8 +192,7 @@ function Sync(model, method, opts) {
 };
 
 //we need underscore
-// var _ = require("alloy/underscore")._;
-var Alloy = require("alloy"), Backbone = Alloy.Backbone, _ = Alloy._, A$ = Alloy.A;
+var Alloy = require("alloy"), Backbone = Alloy.Backbone, _ = Alloy._;
 
 module.exports.sync = Sync;
 

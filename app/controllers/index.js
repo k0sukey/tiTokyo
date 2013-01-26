@@ -1,5 +1,9 @@
 var Animation = require('alloy/animation');
 
+// Progress view is global...
+Alloy.Globals.progress = $.progress;
+
+// Current tab and page setting
 var tab = 'home';
 
 var current = Alloy.createController('home');
@@ -9,10 +13,12 @@ current.getView().applyProperties({
 $.content.add(current.getView());
 current.trigger('home:focus');
 
+// Special information page setting
 var info = Alloy.createController('info');
 
 $.navigation.on('navigation:logo', function(e){
 	if (e.visibled) {
+		// Page dismiss
 		Animation.fadeOut(info.getView(), 200, function(){
 			current.trigger(tab + ':focus');
 
@@ -28,6 +34,7 @@ $.navigation.on('navigation:logo', function(e){
 			});
 		});
 	} else {
+		// Page show
 		$.modal.applyProperties({
 			opacity: 1,
 			touchEnabled: true
@@ -40,6 +47,7 @@ $.navigation.on('navigation:logo', function(e){
 	}
 });
 
+// Change event of tab and page
 $.tab.on('tab:change', function(e){
 	var next = Alloy.createController(e.after);
 	$.content.add(next.getView());
@@ -57,4 +65,41 @@ $.tab.on('tab:change', function(e){
 	});
 });
 
+// Progress events(show / dismiss)
+$.progress.on('progress:show', function(callback){
+	$.progress.applyProperties({
+		opacity: 1,
+		touchEnabled: true
+	});
+
+	$.shadow.animate({
+		opacity: 0.4,
+		duration: 200
+	}, function(){
+		$.indicator.show();
+
+		if (callback) {
+			callback();
+		}
+	});
+});
+
+$.progress.on('progress:dismiss', function(callback){
+	$.indicator.hide();
+	$.shadow.animate({
+		opacity: 0,
+		duration: 200
+	}, function(){
+		$.progress.applyProperties({
+			opacity: 0,
+			touchEnabled: false
+		});
+
+		if (callback) {
+			callback();
+		}
+	});
+});
+
+// Parent window open
 $.index.open();

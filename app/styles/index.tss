@@ -15,4 +15,15 @@
 	backgroundRepeat: true,
 	opacity: 0,
 	touchEnabled: false
+},
+'#progress': {
+	opacity: 0,
+	touchEnabled: false
+}
+'#shadow': {
+	backgroundColor: '#000',
+	opacity: 0
+},
+'#indicator': {
+	style: Alloy.CFG.index.indicatorStyle
 }

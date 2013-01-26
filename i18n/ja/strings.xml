@@ -39,4 +39,8 @@
 
 	<string name="post_post">ツイート</string>
 	<string name="post_cancel">キャンセル</string>
+
+	<string name="pulltorefresh_down">画面を引き下げて...</string>
+	<string name="pulltorefresh_release">指を離して更新...</string>
+	<string name="pulltorefresh_load">更新中...</string>
 </resources>

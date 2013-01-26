@@ -1,5 +1,9 @@
 var Alloy = require("alloy"), _ = Alloy._, Backbone = Alloy.Backbone;
 
+Alloy.CFG.index = {
+    indicatorStyle: Ti.UI.iPhone.ActivityIndicatorStyle.BIG
+};
+
 Alloy.CFG.tab = {
     agendaLeft: Ti.Platform.displayCaps.platformWidth / 5,
     speakerLeft: Ti.Platform.displayCaps.platformWidth / 5 * 2,

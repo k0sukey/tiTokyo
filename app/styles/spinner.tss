@@ -1,0 +1,21 @@
+'#container': {
+	width: Ti.Platform.displayCaps.platformWidth,
+	height: Ti.Platform.displayCaps.platformHeight,
+	touchEnabled: false,
+	opacity: 0
+},
+'#spinner': {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: '#383838',
+	shadowColor: '#fff',
+	shadowOffset: {
+		x: 0.0,
+		y: 1.0
+	},
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	font: {
+		fontSize: '40dp'
+	},
+	touchEnabled: false
+}

@@ -40,4 +40,8 @@
 
 	<string name="post_post">Tweet</string>
 	<string name="post_cancel">Cancel</string>
+
+	<string name="pulltorefresh_down">Pull down to...</string>
+	<string name="pulltorefresh_release">Release to refresh...</string>
+	<string name="pulltorefresh_load">Loading...</string>
 </resources>

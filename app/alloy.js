@@ -10,6 +10,10 @@
 //
 // Alloy.Globals.someGlobalFunction = function(){};
 
+Alloy.CFG.index = {
+	indicatorStyle: OS_IOS ? Ti.UI.iPhone.ActivityIndicatorStyle.BIG : Ti.UI.ActivityIndicatorStyle.BIG
+};
+
 Alloy.CFG.tab = {
 	agendaLeft: Ti.Platform.displayCaps.platformWidth / 5,
 	speakerLeft: Ti.Platform.displayCaps.platformWidth / 5 * 2,

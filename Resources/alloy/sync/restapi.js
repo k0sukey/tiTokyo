@@ -142,7 +142,7 @@ function Sync(model, method, opts) {
     }
 }
 
-var RestAPIBaseUrl = null, Alloy = require("alloy"), Backbone = Alloy.Backbone, _ = Alloy._, A$ = Alloy.A;
+var RestAPIBaseUrl = null, Alloy = require("alloy"), Backbone = Alloy.Backbone, _ = Alloy._;
 
 module.exports.sync = Sync;
 

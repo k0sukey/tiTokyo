@@ -1,0 +1,5 @@
+<Alloy>
+	<View id="container">
+		<Widget id="spinner" icon="icon-spinner" src="be.k0suke.fontawesome"/>
+	</View>
+</Alloy>
