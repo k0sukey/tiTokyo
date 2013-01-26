@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-    <property name="twitter-consumerKey" type="string">cJD1z9L4G7D01BpsjUufhA</property>
-    <property name="twitter-consumerSecret" type="string">VoOIkSbSQrkhpl4mUsqOsu34QFLltlnXOH9LdyJsQK0</property>
+    <property name="twitter-consumerKey" type="string"></property>
+    <property name="twitter-consumerSecret" type="string"></property>
     <property name="ti.android.bug2373.skipAlert">true</property>
     <property name="ti.android.bug2373.message"/>
     <id>ti.tokyo</id>
