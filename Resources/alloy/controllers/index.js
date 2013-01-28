@@ -100,7 +100,6 @@ function Controller() {
         });
     });
     $.progress.on("progress:show", function(callback) {
-        Ti.API.info("PROGRESS:SHOW");
         $.progress.applyProperties({
             opacity: 1,
             touchEnabled: !0
@@ -114,7 +113,6 @@ function Controller() {
         });
     });
     $.progress.on("progress:dismiss", function(callback) {
-        Ti.API.info("PROGRESS:dismiss");
         $.indicator.hide();
         $.shadow.animate({
             opacity: 0,

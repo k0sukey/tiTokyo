@@ -9,7 +9,7 @@
 	<string name="agenda_description2">Appcelerator 製品アップデート - Titanium 3.0（Appcelerator）</string>
 	<string name="agenda_description3">株式会社デンソー プレゼンテーション（つながるクルマの世界）（武智 俊英氏、株式会社デンソー 情報通信サービス開発室 室長）</string>
 	<string name="agenda_description4">昼食（無料）</string>
-	<string name="agenda_description5">Appcelerator Product Deep Dive（スピーカー調整中）</string>
+	<string name="agenda_description5">Appcelerator Product Deep Dive（RICARDO ALCOCER, Appcelerator Platform Evangelist）</string>
 	<string name="agenda_description6">ゲストプレゼンテーション - LANICA（井口 恒太氏, LANICA 社 共同創設者）</string>
 	<string name="agenda_description7">休憩</string>
 	<string name="agenda_description8">日本 Titanium ユーザ会からの Q&amp;A セッション</string>
@@ -24,6 +24,9 @@
 	<string name="speaker_name2">井口 恒太（いぐち こうた）氏</string>
 	<string name="speaker_title2">LANICA 社 共同創設者</string>
 	<string name="speaker_description2">井口 恒太氏は北海道にある Infosia Inc. の CEO であり、創設者です。日本でソフトウェア開発者としての 12 年間の中で、C\/C++, C# そして Java を用いてエンタープライズから組み込みまでの多様なシステム開発を経験してます。井口氏はまた e3roid や emo-framework そして QuickTiGame2d といった、複数のゲーム開発の為のオープンソースプロジェクトを立ち上げ、また自らも開発者として参画されています。井口氏は現在、自身のモバイルゲームエンジンの開発経験を生かし、LANICA のゲームエンジンのアーキテクトとして活躍されています。</string>
+	<string name="speaker_name3">RICARDO ALCOCER 氏</string>
+	<string name="speaker_title3">Appcelerator 社プラットフォームエバンジェリスト</string>
+	<string name="speaker_description3">Ricardo Alcocer 氏は、シリコンバレーエリアでデベロッパーコミュニティーで活躍している Appcelerator 社のプラットフォームエバンジェリストです。2009 年に Appcelerator 社の Titanium Mobile プラットフォームを使ったアプリ開発を始め、ネイティブモバイルフロントエンドと PHP によるバックエンドプログラミングと組み合わせた独自ソリューションを開発し、西インド諸島や中南米でトレーニングセッションを行なっていました。また同年に休暇で日本を訪れて以来の日本びいき。</string>
 
 	<string name="timeline_error_title">エラー</string>
 	<string name="timeline_error_yes">リトライ</string>

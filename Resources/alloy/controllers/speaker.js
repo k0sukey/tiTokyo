@@ -261,6 +261,82 @@ function Controller() {
         id: "__alloyId44"
     }), "Label", $.__views.__alloyId42);
     $.__views.__alloyId42.add($.__views.__alloyId44);
+    $.__views.__alloyId45 = A$(Ti.UI.createLabel({
+        top: "10dp",
+        right: "10dp",
+        left: "10dp",
+        width: Ti.UI.FILL,
+        height: Ti.UI.SIZE,
+        color: "#383838",
+        shadowColor: "#fff",
+        shadowOffset: {
+            x: 0,
+            y: 1
+        },
+        font: {
+            fontSize: "16dp",
+            fontWeight: "bold"
+        },
+        textid: "speaker_name3",
+        id: "__alloyId45"
+    }), "Label", $.__views.container);
+    $.__views.container.add($.__views.__alloyId45);
+    $.__views.__alloyId46 = A$(Ti.UI.createLabel({
+        right: "10dp",
+        left: "10dp",
+        width: Ti.UI.FILL,
+        height: Ti.UI.SIZE,
+        color: "#383838",
+        shadowColor: "#fff",
+        shadowOffset: {
+            x: 0,
+            y: 1
+        },
+        font: {
+            fontSize: "12dp"
+        },
+        textid: "speaker_title3",
+        id: "__alloyId46"
+    }), "Label", $.__views.container);
+    $.__views.container.add($.__views.__alloyId46);
+    $.__views.__alloyId47 = A$(Ti.UI.createView({
+        top: "4dp",
+        right: "10dp",
+        bottom: "10dp",
+        left: "10dp",
+        width: Ti.UI.FILL,
+        height: Ti.UI.SIZE,
+        id: "__alloyId47"
+    }), "View", $.__views.container);
+    $.__views.container.add($.__views.__alloyId47);
+    $.__views.__alloyId48 = A$(Ti.UI.createImageView({
+        top: 0,
+        left: 0,
+        width: "48dp",
+        height: "48dp",
+        borderRadius: 4,
+        image: "/images/alco.png",
+        id: "__alloyId48"
+    }), "ImageView", $.__views.__alloyId47);
+    $.__views.__alloyId47.add($.__views.__alloyId48);
+    $.__views.__alloyId49 = A$(Ti.UI.createLabel({
+        top: 0,
+        left: "58dp",
+        width: Ti.UI.FILL,
+        height: Ti.UI.SIZE,
+        color: "#383838",
+        shadowColor: "#fff",
+        shadowOffset: {
+            x: 0,
+            y: 1
+        },
+        font: {
+            fontSize: "14dp"
+        },
+        textid: "speaker_description3",
+        id: "__alloyId49"
+    }), "Label", $.__views.__alloyId47);
+    $.__views.__alloyId47.add($.__views.__alloyId49);
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.on("speaker:focus", function() {

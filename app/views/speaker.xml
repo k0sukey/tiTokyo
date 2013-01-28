@@ -19,5 +19,11 @@
 			<ImageView class="photo" image="/images/kota.png"/>
 			<Label class="description" textid="speaker_description2"/>
 		</View>
+		<Label class="name" textid="speaker_name3"/>
+		<Label class="title" textid="speaker_title3"/>
+		<View class="frame">
+			<ImageView class="photo" image="/images/alco.png"/>
+			<Label class="description" textid="speaker_description3"/>
+		</View>
 	</ScrollView>
 </Alloy>

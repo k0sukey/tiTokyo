@@ -4,6 +4,12 @@
 
 
 ## Changelog
+### 28 Jan 2013
+* Added new speaker
+
+### 26 Jan 2013
+* Changed progress indicator
+
 ### 23 Jan 2013
 * Added more venue information
 

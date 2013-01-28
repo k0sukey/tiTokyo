@@ -28,7 +28,7 @@ function Controller() {
         id: "title"
     }), "Label", $.__views.container);
     $.__views.container.add($.__views.title);
-    $.__views.__alloyId45 = A$(Ti.UI.createLabel({
+    $.__views.__alloyId50 = A$(Ti.UI.createLabel({
         right: "10dp",
         bottom: "10dp",
         left: "10dp",
@@ -44,10 +44,10 @@ function Controller() {
             fontSize: "14dp"
         },
         textid: "venue_description0",
-        id: "__alloyId45"
+        id: "__alloyId50"
     }), "Label", $.__views.container);
-    $.__views.container.add($.__views.__alloyId45);
-    $.__views.__alloyId46 = A$(Ti.UI.createLabel({
+    $.__views.container.add($.__views.__alloyId50);
+    $.__views.__alloyId51 = A$(Ti.UI.createLabel({
         right: "10dp",
         bottom: "10dp",
         left: "10dp",
@@ -63,10 +63,10 @@ function Controller() {
             fontSize: "14dp"
         },
         textid: "venue_description1",
-        id: "__alloyId46"
+        id: "__alloyId51"
     }), "Label", $.__views.container);
-    $.__views.container.add($.__views.__alloyId46);
-    var __alloyId47 = [];
+    $.__views.container.add($.__views.__alloyId51);
+    var __alloyId52 = [];
     $.__views.annotation = A$(Ti.Map.createAnnotation({
         latitude: 35.662331,
         longitude: 139.728733,
@@ -75,7 +75,7 @@ function Controller() {
         titleid: "venue_annotation_title",
         subtitleid: "venue_annotation_subtitle"
     }), "Annotation", null);
-    __alloyId47.push($.__views.annotation);
+    __alloyId52.push($.__views.annotation);
     $.__views.map = A$(Ti.Map.createView({
         region: {
             latitude: 35.662331,
@@ -86,7 +86,7 @@ function Controller() {
         animate: !0,
         regionFit: !0,
         userLocation: !0,
-        annotations: __alloyId47,
+        annotations: __alloyId52,
         ns: Ti.Map,
         id: "map"
     }), "View", $.__views.container);
