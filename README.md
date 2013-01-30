@@ -4,6 +4,9 @@
 
 
 ## Changelog
+### 30 Jan 2013
+* Dealing with toggle in-call status bar height change event
+
 ### 28 Jan 2013
 * Added new speaker
 

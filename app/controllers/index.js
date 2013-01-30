@@ -1,5 +1,8 @@
 var Animation = require('alloy/animation');
 
+// GPS purpose
+Ti.Geolocation.purpose = L('gps_purpose');
+
 // Progress view is global...
 Alloy.Globals.progress = $.progress;
 
@@ -103,3 +106,22 @@ $.progress.on('progress:dismiss', function(callback){
 
 // Parent window open
 $.index.open();
+
+if (OS_IOS) {
+	var TiDisplay = require('be.k0suke.tidisplay');
+	var statusBarHeight = TiDisplay.mainScreenHeight - TiDisplay.applicationFrameHeight;
+
+	$.index.on('changelayout', function(){
+		var changedHeight = TiDisplay.mainScreenHeight - TiDisplay.applicationFrameHeight;
+
+		if (statusBarHeight !== changedHeight) {
+			$.content.applyProperties({
+				top: '65dp',
+				bottom: '46dp'
+			});
+
+			current.trigger(tab + ':layout');
+			statusBarHeight = changedHeight;
+		}
+	});
+}

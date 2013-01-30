@@ -143,3 +143,12 @@ $.on('timeline:blur', function(){
 		scrollingEnabled: false
 	});
 });
+
+if (OS_IOS) {
+	$.on('timeline:layout', function(){
+		$.container.applyProperties({
+			width: Ti.UI.FILL,
+			height: Ti.UI.FILL
+		});
+	});
+}

@@ -9,3 +9,12 @@ $.on('agenda:blur', function(){
 		scrollingEnabled: false
 	});
 });
+
+if (OS_IOS) {
+	$.on('agenda:layout', function(){
+		$.container.applyProperties({
+			width: Ti.UI.FILL,
+			height: Ti.UI.FILL
+		});
+	});
+}

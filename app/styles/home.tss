@@ -12,34 +12,26 @@
 	width: Ti.Platform.displayCaps.platformWidth,
 	height: Alloy.CFG.home.slideHeight
 },
+'.side': {
+	width: Ti.Platform.displayCaps.platformWidth,
+	height: Alloy.CFG.home.slideHeight,
+	opacity: 0
+},
 '#slide0': {
 	image: '/images/slide0.jpg',
-	width: Ti.Platform.displayCaps.platformWidth,
-	height: Alloy.CFG.home.slideHeight
+	opacity: 1
 },
 '#slide1': {
-	image: '/images/slide1.jpg',
-	width: Ti.Platform.displayCaps.platformWidth,
-	height: Alloy.CFG.home.slideHeight,
-	opacity: 0
+	image: '/images/slide1.jpg'
 },
 '#slide2': {
-	image: '/images/slide2.jpg',
-	width: Ti.Platform.displayCaps.platformWidth,
-	height: Alloy.CFG.home.slideHeight,
-	opacity: 0
+	image: '/images/slide2.jpg'
 },
 '#slide3': {
-	image: '/images/slide3.jpg',
-	width: Ti.Platform.displayCaps.platformWidth,
-	height: Alloy.CFG.home.slideHeight,
-	opacity: 0
+	image: '/images/slide3.jpg'
 },
 '#slide4': {
-	image: '/images/slide4.jpg',
-	width: Ti.Platform.displayCaps.platformWidth,
-	height: Alloy.CFG.home.slideHeight,
-	opacity: 0
+	image: '/images/slide4.jpg'
 },
 '#title': {
 	top: '20dp',

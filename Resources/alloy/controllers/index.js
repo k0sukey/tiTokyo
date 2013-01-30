@@ -56,6 +56,7 @@ function Controller() {
     exports.destroy = function() {};
     _.extend($, $.__views);
     var Animation = require("alloy/animation");
+    Ti.Geolocation.purpose = L("gps_purpose");
     Alloy.Globals.progress = $.progress;
     var tab = "home", current = Alloy.createController("home");
     current.getView().applyProperties({
@@ -126,6 +127,18 @@ function Controller() {
         });
     });
     $.index.open();
+    var TiDisplay = require("be.k0suke.tidisplay"), statusBarHeight = TiDisplay.mainScreenHeight - TiDisplay.applicationFrameHeight;
+    $.index.on("changelayout", function() {
+        var changedHeight = TiDisplay.mainScreenHeight - TiDisplay.applicationFrameHeight;
+        if (statusBarHeight !== changedHeight) {
+            $.content.applyProperties({
+                top: "65dp",
+                bottom: "46dp"
+            });
+            current.trigger(tab + ":layout");
+            statusBarHeight = changedHeight;
+        }
+    });
     _.extend($, exports);
 }
 

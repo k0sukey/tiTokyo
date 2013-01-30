@@ -22,40 +22,27 @@ function Controller() {
     $.__views.container.add($.__views.slideshow);
     $.__views.slide0 = A$(Ti.UI.createImageView({
         image: "/images/slide0.jpg",
-        width: Ti.Platform.displayCaps.platformWidth,
-        height: Alloy.CFG.home.slideHeight,
+        opacity: 1,
         id: "slide0"
     }), "ImageView", $.__views.slideshow);
     $.__views.slideshow.add($.__views.slide0);
     $.__views.slide1 = A$(Ti.UI.createImageView({
         image: "/images/slide1.jpg",
-        width: Ti.Platform.displayCaps.platformWidth,
-        height: Alloy.CFG.home.slideHeight,
-        opacity: 0,
         id: "slide1"
     }), "ImageView", $.__views.slideshow);
     $.__views.slideshow.add($.__views.slide1);
     $.__views.slide2 = A$(Ti.UI.createImageView({
         image: "/images/slide2.jpg",
-        width: Ti.Platform.displayCaps.platformWidth,
-        height: Alloy.CFG.home.slideHeight,
-        opacity: 0,
         id: "slide2"
     }), "ImageView", $.__views.slideshow);
     $.__views.slideshow.add($.__views.slide2);
     $.__views.slide3 = A$(Ti.UI.createImageView({
         image: "/images/slide3.jpg",
-        width: Ti.Platform.displayCaps.platformWidth,
-        height: Alloy.CFG.home.slideHeight,
-        opacity: 0,
         id: "slide3"
     }), "ImageView", $.__views.slideshow);
     $.__views.slideshow.add($.__views.slide3);
     $.__views.slide4 = A$(Ti.UI.createImageView({
         image: "/images/slide4.jpg",
-        width: Ti.Platform.displayCaps.platformWidth,
-        height: Alloy.CFG.home.slideHeight,
-        opacity: 0,
         id: "slide4"
     }), "ImageView", $.__views.slideshow);
     $.__views.slideshow.add($.__views.slide4);
@@ -161,6 +148,12 @@ function Controller() {
         clearInterval(interval);
         $.container.applyProperties({
             scrollingEnabled: !1
+        });
+    });
+    $.on("home:layout", function() {
+        $.container.applyProperties({
+            width: Ti.UI.FILL,
+            height: Ti.UI.FILL
         });
     });
     _.extend($, exports);
