@@ -4,7 +4,7 @@
 
 
 ## Changelog
-### 30 Jan 2013
+### 31 Jan 2013
 * Added Android artwork
 * Fixed Android bug
 
