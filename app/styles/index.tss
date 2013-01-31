@@ -22,8 +22,10 @@
 }
 '#shadow': {
 	backgroundColor: '#000',
-	opacity: 0
+	opacity: 0,
+	touchEnabled: false
 },
 '#indicator': {
-	style: Alloy.CFG.index.indicatorStyle
+	style: Alloy.CFG.index.indicatorStyle,
+	touchEnabled: false
 }

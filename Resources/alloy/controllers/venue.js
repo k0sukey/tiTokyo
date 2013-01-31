@@ -96,12 +96,6 @@ function Controller() {
     $.map.selectAnnotation($.annotation);
     $.on("venue:focus", function() {});
     $.on("venue:blur", function() {});
-    $.on("venue:layout", function() {
-        $.container.applyProperties({
-            width: Ti.UI.FILL,
-            height: Ti.UI.FILL
-        });
-    });
     _.extend($, exports);
 }
 

@@ -1,7 +1,7 @@
 var Alloy = require("alloy"), _ = Alloy._, Backbone = Alloy.Backbone;
 
 Alloy.CFG.index = {
-    indicatorStyle: Ti.UI.iPhone.ActivityIndicatorStyle.BIG
+    indicatorStyle: Ti.UI.ActivityIndicatorStyle.BIG
 };
 
 Alloy.CFG.tab = {

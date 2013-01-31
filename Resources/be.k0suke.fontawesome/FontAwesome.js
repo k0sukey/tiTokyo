@@ -1,5 +1,5 @@
 function FontAwesome(options) {
-    switch (Ti.Platform.osname) {
+    switch ("android") {
       case "iphone":
       case "ipad":
         this.fontfamily = "FontAwesome";

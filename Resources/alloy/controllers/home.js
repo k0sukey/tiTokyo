@@ -150,12 +150,6 @@ function Controller() {
             scrollingEnabled: !1
         });
     });
-    $.on("home:layout", function() {
-        $.container.applyProperties({
-            width: Ti.UI.FILL,
-            height: Ti.UI.FILL
-        });
-    });
     _.extend($, exports);
 }
 

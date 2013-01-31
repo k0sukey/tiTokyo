@@ -45,11 +45,13 @@ function Controller() {
     $.__views.shadow = A$(Ti.UI.createView({
         backgroundColor: "#000",
         opacity: 0,
+        touchEnabled: !1,
         id: "shadow"
     }), "View", $.__views.progress);
     $.__views.progress.add($.__views.shadow);
     $.__views.indicator = A$(Ti.UI.createActivityIndicator({
         style: Alloy.CFG.index.indicatorStyle,
+        touchEnabled: !1,
         id: "indicator"
     }), "ActivityIndicator", $.__views.progress);
     $.__views.progress.add($.__views.indicator);
@@ -127,18 +129,6 @@ function Controller() {
         });
     });
     $.index.open();
-    var TiDisplay = require("be.k0suke.tidisplay"), statusBarHeight = TiDisplay.mainScreenHeight - TiDisplay.applicationFrameHeight;
-    $.index.on("changelayout", function() {
-        var changedHeight = TiDisplay.mainScreenHeight - TiDisplay.applicationFrameHeight;
-        if (statusBarHeight !== changedHeight) {
-            $.content.applyProperties({
-                top: "65dp",
-                bottom: "46dp"
-            });
-            current.trigger(tab + ":layout");
-            statusBarHeight = changedHeight;
-        }
-    });
     _.extend($, exports);
 }
 
