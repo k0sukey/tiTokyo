@@ -1,0 +1,6 @@
+<Alloy>
+	<View id="container">
+		<Label id="schedule"/>
+		<Label id="content"/>
+	</View>
+</Alloy>

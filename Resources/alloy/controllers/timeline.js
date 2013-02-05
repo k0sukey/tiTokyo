@@ -1,49 +1,4 @@
 function Controller() {
-    function doTimeline() {
-        if (!Ti.Network.online) {
-            Dialogs.confirm({
-                title: L("timeline_error_title"),
-                message: L("timeline_error_network"),
-                yes: L("timeline_error_yes"),
-                no: L("timeline_error_no"),
-                callback: function() {
-                    $.trigger("timeline:focus");
-                }
-            });
-            return;
-        }
-        Alloy.Globals.progress.trigger("progress:show", function() {
-            var timeline = Alloy.createCollection("timeline");
-            timeline.fetch({
-                success: function(collection, data) {
-                    var children = $.container.getChildren();
-                    _.each(children, function(child, index) {
-                        index > 0 && $.container.remove(child);
-                    });
-                    _.each(data, function(_item) {
-                        _.isArray(_item) && _.each(_item, function(item) {
-                            var tweet = Alloy.createController("tweet", item);
-                            $.container.add(tweet.getView());
-                            Animation.fadeIn(tweet.getView(), 200);
-                        });
-                    });
-                    Alloy.Globals.progress.trigger("progress:dismiss");
-                },
-                error: function(collection, data) {
-                    Alloy.Globals.progress.trigger("progress:dismiss");
-                    Dialogs.confirm({
-                        title: L("timeline_error_title"),
-                        message: L("timeline_error_xhr"),
-                        yes: L("timeline_error_yes"),
-                        no: L("timeline_error_no"),
-                        callback: function() {
-                            $.trigger("timeline:focus");
-                        }
-                    });
-                }
-            });
-        });
-    }
     function doPost() {
         var post = Alloy.createController("post");
         $.base.add(post.getView());
@@ -182,14 +137,58 @@ function Controller() {
         twitter.isAuthorized() ? doPost() : twitter.authorize(doPost);
     });
     $.on("timeline:focus", function() {
-        doTimeline();
         $.container.applyProperties({
             scrollingEnabled: !0
+        });
+        if (!Ti.Network.online) {
+            Dialogs.confirm({
+                title: L("timeline_error_title"),
+                message: L("timeline_error_network"),
+                yes: L("timeline_error_yes"),
+                no: L("timeline_error_no"),
+                callback: function() {
+                    $.trigger("timeline:focus");
+                }
+            });
+            return;
+        }
+        Alloy.Globals.progress.trigger("progress:show", function() {
+            var timeline = Alloy.createCollection("timeline");
+            timeline.fetch({
+                success: function(collection, data) {
+                    _.each(data, function(_item) {
+                        _.isArray(_item) && _.each(_item, function(item) {
+                            var tweet = Alloy.createController("tweet", item);
+                            $.container.add(tweet.getView());
+                            Animation.fadeIn(tweet.getView(), 200);
+                        });
+                    });
+                    Alloy.Globals.progress.trigger("progress:dismiss");
+                },
+                error: function(collection, data) {
+                    Alloy.Globals.progress.trigger("progress:dismiss");
+                    Dialogs.confirm({
+                        title: L("timeline_error_title"),
+                        message: L("timeline_error_xhr"),
+                        yes: L("timeline_error_yes"),
+                        no: L("timeline_error_no"),
+                        callback: function() {
+                            $.trigger("timeline:focus");
+                        }
+                    });
+                }
+            });
         });
     });
     $.on("timeline:blur", function() {
         $.container.applyProperties({
             scrollingEnabled: !1
+        });
+    });
+    $.on("timeline:layout", function() {
+        $.container.applyProperties({
+            width: Ti.UI.FILL,
+            height: Ti.UI.FILL
         });
     });
     _.extend($, exports);

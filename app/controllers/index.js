@@ -3,21 +3,8 @@ var Animation = require('alloy/animation');
 // GPS purpose
 Ti.Geolocation.purpose = L('gps_purpose');
 
-// Progress view is global...
+// Progress view is Alloy.Globals...
 Alloy.Globals.progress = $.progress;
-
-// Current tab and page setting
-var tab = 'home';
-
-var current = Alloy.createController('home');
-current.getView().applyProperties({
-	opacity: 1
-});
-$.content.add(current.getView());
-current.trigger('home:focus');
-
-// Special information page setting
-var info = Alloy.createController('info');
 
 $.navigation.on('navigation:logo', function(e){
 	if (e.visibled) {
@@ -106,6 +93,19 @@ $.progress.on('progress:dismiss', function(callback){
 
 // Parent window open
 $.index.open();
+
+// Current tab and page setting
+var tab = 'home';
+
+var current = Alloy.createController('home');
+current.getView().applyProperties({
+	opacity: 1
+});
+$.content.add(current.getView());
+current.trigger('home:focus');
+
+// Special information page setting
+var info = Alloy.createController('info');
 
 if (OS_IOS) {
 	var TiDisplay = require('be.k0suke.tidisplay');

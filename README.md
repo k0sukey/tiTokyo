@@ -1,9 +1,29 @@
 # tiTokyo
 
-[tiTokyo](http://titokyo.jp/) conference application was created using Titanium Mobile and Alloy MVC framework.
+[tiTokyo](http://titokyo.jp/) conference application was created using Titanium Mobile and Alloy MVC framework, ACS(data storage).
+
+
+## ACS using data storage
+Custom Objects data format.
+
+| class | filed | type | example |
+|-------|------:|:-----|:--------| 
+| **home** | description | dictionary | { "en": "Text of English", "ja": "日本語のテキスト" } |
+| | order | number | 1 |
+| **agenda** | started_at | date | 2013-02-16 08:30:00 |
+| | ended_at | date | 2013-02-16 09:30:00 |
+| | content | dictionary | { "en": "Text of English", "ja": "日本語のテキスト" } |
+| **speaker** | name | dictionary | { "en": "Text of English", "ja": "日本語のテキスト" } |
+| | title | dictionary | { "en": "Text of English", "ja": "日本語のテキスト" } |
+| | content | dictionary | { "en": "Text of English", "ja": "日本語のテキスト" } |
+| | order | number | 1 |
+| | photo | image upload | |
 
 
 ## Changelog
+### 5 Feb 2013
+* home, agenda, speaker data get from ACS
+
 ### 31 Jan 2013
 * Added Android artwork
 * Fixed Android bug

@@ -66,67 +66,13 @@ function Controller() {
         id: "title"
     }), "Label", $.__views.container);
     $.__views.container.add($.__views.title);
-    $.__views.__alloyId20 = A$(Ti.UI.createLabel({
-        right: "10dp",
-        bottom: "10dp",
-        left: "10dp",
-        width: Ti.UI.FILL,
-        height: Ti.UI.SIZE,
-        color: "#383838",
-        shadowColor: "#fff",
-        shadowOffset: {
-            x: 0,
-            y: 1
-        },
-        font: {
-            fontSize: "14dp"
-        },
-        textid: "home_description0",
-        id: "__alloyId20"
-    }), "Label", $.__views.container);
-    $.__views.container.add($.__views.__alloyId20);
-    $.__views.__alloyId21 = A$(Ti.UI.createLabel({
-        right: "10dp",
-        bottom: "10dp",
-        left: "10dp",
-        width: Ti.UI.FILL,
-        height: Ti.UI.SIZE,
-        color: "#383838",
-        shadowColor: "#fff",
-        shadowOffset: {
-            x: 0,
-            y: 1
-        },
-        font: {
-            fontSize: "14dp"
-        },
-        textid: "home_description1",
-        id: "__alloyId21"
-    }), "Label", $.__views.container);
-    $.__views.container.add($.__views.__alloyId21);
-    $.__views.__alloyId22 = A$(Ti.UI.createLabel({
-        right: "10dp",
-        bottom: "10dp",
-        left: "10dp",
-        width: Ti.UI.FILL,
-        height: Ti.UI.SIZE,
-        color: "#383838",
-        shadowColor: "#fff",
-        shadowOffset: {
-            x: 0,
-            y: 1
-        },
-        font: {
-            fontSize: "14dp"
-        },
-        textid: "home_description2",
-        id: "__alloyId22"
-    }), "Label", $.__views.container);
-    $.__views.container.add($.__views.__alloyId22);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    var Animation = require("alloy/animation"), slideshow = [ $.slide0, $.slide1, $.slide2, $.slide3, $.slide4 ], interval;
+    var Animation = require("alloy/animation"), Dialogs = require("alloy/dialogs"), slideshow = [ $.slide0, $.slide1, $.slide2, $.slide3, $.slide4 ], interval;
     $.on("home:focus", function() {
+        $.container.applyProperties({
+            scrollingEnabled: !0
+        });
         var current = 0;
         _.each(slideshow, function(item, index) {
             item.applyProperties({
@@ -140,14 +86,63 @@ function Controller() {
                 current = next;
             });
         }, 4000);
-        $.container.applyProperties({
-            scrollingEnabled: !0
+        if (!Ti.Network.online) {
+            Dialogs.confirm({
+                title: L("home_error_title"),
+                message: L("home_error_network"),
+                yes: L("home_error_yes"),
+                no: L("home_error_no"),
+                callback: function() {
+                    clearInterval(interval);
+                    $.trigger("home:focus");
+                }
+            });
+            return;
+        }
+        Alloy.Globals.progress.trigger("progress:show", function() {
+            var home = Alloy.createCollection("home");
+            home.fetch({
+                read: "query",
+                data: {
+                    limit: 1000,
+                    skip: 0,
+                    order: "-order"
+                },
+                success: function(collection, data) {
+                    data.reverse();
+                    _.each(data, function(item) {
+                        var description = Alloy.createController("description", item);
+                        $.container.add(description.getView());
+                        Animation.fadeIn(description.getView(), 200);
+                    });
+                    Alloy.Globals.progress.trigger("progress:dismiss");
+                },
+                error: function(collection, data) {
+                    Alloy.Globals.progress.trigger("progress:dismiss");
+                    Dialogs.confirm({
+                        title: L("home_error_title"),
+                        message: L("home_error_xhr"),
+                        yes: L("home_error_yes"),
+                        no: L("home_error_no"),
+                        callback: function() {
+                            clearInterval(interval);
+                            $.trigger("home:focus");
+                        }
+                    });
+                }
+            });
         });
     });
     $.on("home:blur", function() {
         clearInterval(interval);
         $.container.applyProperties({
             scrollingEnabled: !1
+        });
+    });
+    $.on("home:layout", function() {
+        $.container.applyProperties({
+            width: Ti.UI.FILL,
+            height: Ti.UI.FILL
         });
     });
     _.extend($, exports);

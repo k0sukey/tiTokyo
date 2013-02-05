@@ -1,32 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-	<string name="home_description0">「tiTokyo」は、主に JavaScript、Appcelerator Titanium、そして株式会社デンソーのクルマとつながるモバイルアプリソリューションに関する終日のカンファレンスです。開催日は 2 月 16 日（土）。参加者のスキルは問いません。エキスパートの方はもちろんのこと初心者の方のご参加もお待ちしております。参加登録先着 200 名様まで参加費無料です（※昼食、懇親会含む）。</string>
-	<string name="home_description1">Appcelerator 社 CEO Jeff Haynie 氏からは、先日リリースしたばかりの最新版 Titanium 3.0 について、株式会社デンソーの武智 俊英氏からは、スマホとカーナビとの連携を実現する Navi-Con やクルマとつながるモバイルアプリソリューションについてご紹介します。</string>
-	<string name="home_description2">更にゲスト・スピーカーの LANICA 社共同創業者の井口恒太氏からは、Titanium でモバイルゲーム開発を可能にする LANICA の Platino™ ゲームエンジンについてご紹介します。Titanium の全てが 1 日で分かる 1Day イベントです！皆さんのご参加お待ちしております。</string>
+	<string name="gps_purpose">GPS は開催地の地図を表示するために使います</string>
 
-	<string name="agenda_description0">受付</string>
-	<string name="agenda_description1">Appcelerator Keynote（Jeff Haynie, Appcelerator CEO）</string>
-	<string name="agenda_description2">Appcelerator 製品アップデート - Titanium 3.0（Appcelerator）</string>
-	<string name="agenda_description3">株式会社デンソー プレゼンテーション（つながるクルマの世界）（武智 俊英氏、株式会社デンソー 情報通信サービス開発室 室長）</string>
-	<string name="agenda_description4">昼食（無料）</string>
-	<string name="agenda_description5">Appcelerator Product Deep Dive（RICARDO ALCOCER, Appcelerator Platform Evangelist）</string>
-	<string name="agenda_description6">ゲストプレゼンテーション - LANICA（井口 恒太氏, LANICA 社 共同創設者）</string>
-	<string name="agenda_description7">休憩</string>
-	<string name="agenda_description8">日本 Titanium ユーザ会からの Q&amp;A セッション</string>
-	<string name="agenda_description9">閉会 - 懇親会（無料）</string>
+	<string name="home_error_title">エラー</string>
+	<string name="home_error_yes">リトライ</string>
+	<string name="home_error_no">キャンセル</string>
+	<string name="home_error_network">インターネットに接続できません</string>
+	<string name="home_error_xhr">データが取得できませんでした</string>
 
-	<string name="speaker_name0">JEFF HAYNIE 氏</string>
-	<string name="speaker_title0">Appcelerator 社 最高経営責任者、共同創設者</string>
-	<string name="speaker_description0">Jeff Haynie 氏は Appcelerator の CEO であり、共同創設者です。長きにわたって起業家、技術者そしてブロガーで、Appcelerator の前は Vocalocity というコミュニケーションの場を提供するソフトウェアプロバイダーの共同創設者で CTO でした。更にそれ以前は Bill Gross の idealab! から派生した eHatchery というデジタル関連のインキュベーターの会社の CTO でした。また、IETF や W3C などの様々な標準化委員としても活動し、JBoss や OpenVXI などの重要なオープンソーステクノロジーのコントリビューターでもありました。</string>
-	<string name="speaker_name1">武智 俊英（たけち としひで）氏</string>
-	<string name="speaker_title1">株式会社デンソー 情報通信サービス開発室 室長</string>
-	<string name="speaker_description1">武智 俊英氏は、株式会社デンソーで海外の高級車のカーナビゲーションシステム開発を歴任。ベンツ、GM、Ford、現代、Jaguar、Volvo 向けのプロジェクトを立ち上げ。2012 年 1 月よりクルマとつながるサービスの企画開発を推進。昨今は、週末は農業を楽しむ。本人曰く「IT は農業とよく似ている」。</string>
-	<string name="speaker_name2">井口 恒太（いぐち こうた）氏</string>
-	<string name="speaker_title2">LANICA 社 共同創設者</string>
-	<string name="speaker_description2">井口 恒太氏は北海道にある Infosia Inc. の CEO であり、創設者です。日本でソフトウェア開発者としての 12 年間の中で、C\/C++, C# そして Java を用いてエンタープライズから組み込みまでの多様なシステム開発を経験してます。井口氏はまた e3roid や emo-framework そして QuickTiGame2d といった、複数のゲーム開発の為のオープンソースプロジェクトを立ち上げ、また自らも開発者として参画されています。井口氏は現在、自身のモバイルゲームエンジンの開発経験を生かし、LANICA のゲームエンジンのアーキテクトとして活躍されています。</string>
-	<string name="speaker_name3">RICARDO ALCOCER 氏</string>
-	<string name="speaker_title3">Appcelerator 社プラットフォームエバンジェリスト</string>
-	<string name="speaker_description3">Ricardo Alcocer 氏は、シリコンバレーエリアでデベロッパーコミュニティーで活躍している Appcelerator 社のプラットフォームエバンジェリストです。2009 年に Appcelerator 社の Titanium Mobile プラットフォームを使ったアプリ開発を始め、ネイティブモバイルフロントエンドと PHP によるバックエンドプログラミングと組み合わせた独自ソリューションを開発し、西インド諸島や中南米でトレーニングセッションを行なっていました。また同年に休暇で日本を訪れて以来の日本びいき。</string>
+	<string name="agenda_error_title">エラー</string>
+	<string name="agenda_error_yes">リトライ</string>
+	<string name="agenda_error_no">キャンセル</string>
+	<string name="agenda_error_network">インターネットに接続できません</string>
+	<string name="agenda_error_xhr">データが取得できませんでした</string>
+
+	<string name="speaker_error_title">エラー</string>
+	<string name="speaker_error_yes">リトライ</string>
+	<string name="speaker_error_no">キャンセル</string>
+	<string name="speaker_error_network">インターネットに接続できません</string>
+	<string name="speaker_error_xhr">データが取得できませんでした</string>
 
 	<string name="timeline_error_title">エラー</string>
 	<string name="timeline_error_yes">リトライ</string>
@@ -42,8 +34,4 @@
 
 	<string name="post_post">ツイート</string>
 	<string name="post_cancel">キャンセル</string>
-
-	<string name="pulltorefresh_down">画面を引き下げて...</string>
-	<string name="pulltorefresh_release">指を離して更新...</string>
-	<string name="pulltorefresh_load">更新中...</string>
 </resources>

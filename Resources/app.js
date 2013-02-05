@@ -1,7 +1,13 @@
 var Alloy = require("alloy"), _ = Alloy._, Backbone = Alloy.Backbone;
 
+Ti.API.info(Ti.Platform.locale);
+
+Alloy.CFG.i18n = Ti.Platform.locale === "ja" || Ti.Platform.locale === "ja-JP" ? "ja" : "en";
+
+Ti.API.info(Alloy.CFG.i18n);
+
 Alloy.CFG.index = {
-    indicatorStyle: Ti.UI.ActivityIndicatorStyle.BIG
+    indicatorStyle: Ti.UI.iPhone.ActivityIndicatorStyle.BIG
 };
 
 Alloy.CFG.tab = {

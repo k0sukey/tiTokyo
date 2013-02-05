@@ -8,8 +8,5 @@
 			<ImageView id="slide4" class="slide"/>
 		</View>
 		<Label id="title">- TOKYO, FEB 16th, 2013 -</Label>
-		<Label class="description" textid="home_description0"/>
-		<Label class="description" textid="home_description1"/>
-		<Label class="description" textid="home_description2"/>
 	</ScrollView>
 </Alloy>

@@ -1,0 +1,21 @@
+'#container': {
+	right: '10dp',
+	bottom: '10dp',
+	left: '10dp',
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	opacity: 0
+},
+'#description': {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	color: '#383838',
+	shadowColor: '#fff',
+	shadowOffset: {
+		x: 0.0,
+		y: 1.0
+	},
+	font: {
+		fontSize: '14dp'
+	}
+}

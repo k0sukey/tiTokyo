@@ -1,25 +1,5 @@
 <Alloy>
 	<ScrollView id="container">
 		<Label id="title">- AGENDA -</Label>
-		<Label class="time">9:00 - 9:30</Label>
-		<Label class="description" textid="agenda_description0"/>
-		<Label class="time">9:30 - 10:30</Label>
-		<Label class="description" textid="agenda_description1"/>
-		<Label class="time">10:30 - 11:30</Label>
-		<Label class="description" textid="agenda_description2"/>
-		<Label class="time">11:30 - 12:30</Label>
-		<Label class="description" textid="agenda_description3"/>
-		<Label class="time">12:30 - 13:30</Label>
-		<Label class="description" textid="agenda_description4"/>
-		<Label class="time">13:30 - 14:30</Label>
-		<Label class="description" textid="agenda_description5"/>
-		<Label class="time">14:30 - 15:30</Label>
-		<Label class="description" textid="agenda_description6"/>
-		<Label class="time">15:30 - 16:00</Label>
-		<Label class="description" textid="agenda_description7"/>
-		<Label class="time">16:00 - 17:00</Label>
-		<Label class="description" textid="agenda_description8"/>
-		<Label class="time">17:00 - 18:30</Label>
-		<Label class="description" textid="agenda_description9"/>
 	</ScrollView>
 </Alloy>

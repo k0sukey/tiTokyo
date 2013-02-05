@@ -60,13 +60,6 @@ function Controller() {
     var Animation = require("alloy/animation");
     Ti.Geolocation.purpose = L("gps_purpose");
     Alloy.Globals.progress = $.progress;
-    var tab = "home", current = Alloy.createController("home");
-    current.getView().applyProperties({
-        opacity: 1
-    });
-    $.content.add(current.getView());
-    current.trigger("home:focus");
-    var info = Alloy.createController("info");
     $.navigation.on("navigation:logo", function(e) {
         if (e.visibled) Animation.fadeOut(info.getView(), 200, function() {
             current.trigger(tab + ":focus");
@@ -129,6 +122,24 @@ function Controller() {
         });
     });
     $.index.open();
+    var tab = "home", current = Alloy.createController("home");
+    current.getView().applyProperties({
+        opacity: 1
+    });
+    $.content.add(current.getView());
+    current.trigger("home:focus");
+    var info = Alloy.createController("info"), TiDisplay = require("be.k0suke.tidisplay"), statusBarHeight = TiDisplay.mainScreenHeight - TiDisplay.applicationFrameHeight;
+    $.index.on("changelayout", function() {
+        var changedHeight = TiDisplay.mainScreenHeight - TiDisplay.applicationFrameHeight;
+        if (statusBarHeight !== changedHeight) {
+            $.content.applyProperties({
+                top: "65dp",
+                bottom: "46dp"
+            });
+            current.trigger(tab + ":layout");
+            statusBarHeight = changedHeight;
+        }
+    });
     _.extend($, exports);
 }
 

@@ -1,0 +1,10 @@
+<Alloy>
+	<View id="container">
+		<Label id="name"/>
+		<Label id="title"/>
+		<View id="frame">
+			<ImageView id="photo"/>
+			<Label id="content"/>
+		</View>
+	</View>
+</Alloy>
