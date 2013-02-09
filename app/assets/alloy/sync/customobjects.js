@@ -10,7 +10,7 @@ function InitAdapter(config) {
 	Cloud.debug = !0;
 }
 
-function Sync(model, method, opts) {
+function Sync(method, model, opts) {
 	switch (method) {
 		case 'create':
 			Cloud.Objects.create({

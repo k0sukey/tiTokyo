@@ -1,6 +1,6 @@
 var visibled = true;
 
-$.logo.on('click', function(){
+$.logo.addEventListener('click', function(){
 	visibled = visibled ? false : true;
 
 	$.trigger('navigation:logo', {

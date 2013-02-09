@@ -48,7 +48,7 @@ function apiCall(_options, _callback) {
     xhr.send(_options.data || null);
 }
 
-function Sync(model, method, opts) {
+function Sync(method, model, opts) {
     var methodMap = {
         'create' : 'POST',
         'read' : 'GET',

@@ -27,22 +27,22 @@ function doTab(tab) {
 	current = tab;
 }
 
-$.tabhome.on('click', function(){
+$.tabhome.addEventListener('click', function(){
 	doTab('home');
 });
 
-$.tabagenda.on('click', function(){
+$.tabagenda.addEventListener('click', function(){
 	doTab('agenda');
 });
 
-$.tabspeaker.on('click', function(){
+$.tabspeaker.addEventListener('click', function(){
 	doTab('speaker');
 });
 
-$.tabtimeline.on('click', function(){
+$.tabtimeline.addEventListener('click', function(){
 	doTab('timeline');
 });
 
-$.tabvenue.on('click', function(){
+$.tabvenue.addEventListener('click', function(){
 	doTab('venue');
 });

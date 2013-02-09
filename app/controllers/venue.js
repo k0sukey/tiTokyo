@@ -1,3 +1,5 @@
+var args = arguments[0] || {};
+
 $.map.selectAnnotation($.annotation);
 
 $.on('venue:focus', function(){});

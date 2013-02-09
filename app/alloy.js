@@ -10,9 +10,7 @@
 //
 // Alloy.Globals.someGlobalFunction = function(){};
 
-Ti.API.info(Ti.Platform.locale);
 Alloy.CFG.i18n = Ti.Platform.locale === 'ja' || Ti.Platform.locale === 'ja-JP' ? 'ja' : 'en';
-Ti.API.info(Alloy.CFG.i18n);
 
 Alloy.CFG.index = {
 	indicatorStyle: OS_IOS ? Ti.UI.iPhone.ActivityIndicatorStyle.BIG : Ti.UI.ActivityIndicatorStyle.BIG

@@ -1,7 +1,12 @@
 '#container': {
-	bottom: 0,
 	height: '46dp',
 	backgroundColor: '#000'
+},
+'#container[platform=ios]': {
+	bottom: 0,
+},
+'#container[platform=android]': {
+	top: '65dp',
 },
 '#line': {
 	top: '1dp',

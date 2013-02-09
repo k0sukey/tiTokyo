@@ -1,3 +1,5 @@
+var args = arguments[0] || {};
+
 var Animation = require('alloy/animation');
 var Dialogs = require('alloy/dialogs');
 var Social = require('alloy/social');
@@ -32,26 +34,28 @@ function doPost() {
 			Animation.fadeOut($.shadow, 200);
 
 			var share = (function(){
-				Alloy.Globals.progress.trigger('progress:show', function(){
-					twitter.share({
-						message: e.message,
-						success: function(e){
-							Alloy.Globals.progress.trigger('progress:dismiss');
-						},
-						error: function(e){
-							Alloy.Globals.progress.trigger('progress:dismiss', function(){
-								Dialogs.confirm({
-									title: L('timeline_error_title'),
-									message: L('timeline_error_post'),
-									yes: L('timeline_error_yes'),
-									no: L('timeline_error_no'),
-									callback: function(){
-										share();
-									}
+				args.parent.trigger('progress:show', {
+					callback: function(){
+						twitter.share({
+							message: e.message,
+							success: function(e){
+								args.parent.trigger('progress:dismiss');
+							},
+							error: function(e){
+								args.parent.trigger('progress:dismiss', function(){
+									Dialogs.confirm({
+										title: L('timeline_error_title'),
+										message: L('timeline_error_post'),
+										yes: L('timeline_error_yes'),
+										no: L('timeline_error_no'),
+										callback: function(){
+											share();
+										}
+									});
 								});
-							});
-						}
-					});
+							}
+						});
+					}
 				});
 			})();
 		});
@@ -67,7 +71,7 @@ function doPost() {
 	});
 }
 
-$.buttonpost.on('click', function(){
+$.buttonpost.addEventListener('click', function(){
 	if (!twitter.isAuthorized()) {
 		twitter.authorize(doPost);
 	} else {
@@ -94,36 +98,38 @@ $.on('timeline:focus', function(){
 		return;
 	}
 
-	Alloy.Globals.progress.trigger('progress:show', function(){
-		var timeline = Alloy.createCollection('timeline');
-		timeline.fetch({
-			success: function(collection, data){
-				_.each(data, function(_item){
-					if (_.isArray(_item)) {
-						_.each(_item, function(item){
-							var tweet = Alloy.createController('tweet', item);
-							$.container.add(tweet.getView());
-							Animation.fadeIn(tweet.getView(), 200);
-						});
-					}
-				});
+	args.parent.trigger('progress:show', {
+		callback: function(){
+			var timeline = Alloy.createCollection('timeline');
+			timeline.fetch({
+				success: function(collection, data){
+					_.each(data, function(_item){
+						if (_.isArray(_item)) {
+							_.each(_item, function(item){
+								var tweet = Alloy.createController('tweet', item);
+								$.container.add(tweet.getView());
+								Animation.fadeIn(tweet.getView(), 200);
+							});
+						}
+					});
 
-				Alloy.Globals.progress.trigger('progress:dismiss');
-			},
-			error: function(collection, data){
-				Alloy.Globals.progress.trigger('progress:dismiss');
+					args.parent.trigger('progress:dismiss');
+				},
+				error: function(collection, data){
+					args.parent.trigger('progress:dismiss');
 
-				Dialogs.confirm({
-					title: L('timeline_error_title'),
-					message: L('timeline_error_xhr'),
-					yes: L('timeline_error_yes'),
-					no: L('timeline_error_no'),
-					callback: function(){
-						$.trigger('timeline:focus');
-					}
-				});
-			}
-		});
+					Dialogs.confirm({
+						title: L('timeline_error_title'),
+						message: L('timeline_error_xhr'),
+						yes: L('timeline_error_yes'),
+						no: L('timeline_error_no'),
+						callback: function(){
+							$.trigger('timeline:focus');
+						}
+					});
+				}
+			});
+		}
 	});
 });
 

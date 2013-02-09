@@ -1,3 +1,5 @@
+var args = arguments[0] || {};
+
 var Animation = require('alloy/animation');
 var Dialogs = require('alloy/dialogs');
 
@@ -44,41 +46,43 @@ $.on('home:focus', function(){
 		return;
 	}
 
-	Alloy.Globals.progress.trigger('progress:show', function(){
-		var home = Alloy.createCollection('home');
-		home.fetch({
-			read: 'query',
-			data: {
-				limit: 1000,
-				skip: 0,
-				order: '-order'
-			},
-			success: function(collection, data){
-				data.reverse();
+	args.parent.trigger('progress:show', {
+		callback: function(){
+			var home = Alloy.createCollection('home');
+			home.fetch({
+				read: 'query',
+				data: {
+					limit: 1000,
+					skip: 0,
+					order: '-order'
+				},
+				success: function(collection, data){
+					data.reverse();
 
-				_.each(data, function(item){
-					var description = Alloy.createController('description', item);
-					$.container.add(description.getView());
-					Animation.fadeIn(description.getView(), 200);
-				});
+					_.each(data, function(item){
+						var description = Alloy.createController('description', item);
+						$.container.add(description.getView());
+						Animation.fadeIn(description.getView(), 200);
+					});
 
-				Alloy.Globals.progress.trigger('progress:dismiss');
-			},
-			error: function(collection, data){
-				Alloy.Globals.progress.trigger('progress:dismiss');
+					args.parent.trigger('progress:dismiss');
+				},
+				error: function(collection, data){
+					args.parent.trigger('progress:dismiss');
 
-				Dialogs.confirm({
-					title: L('home_error_title'),
-					message: L('home_error_xhr'),
-					yes: L('home_error_yes'),
-					no: L('home_error_no'),
-					callback: function(){
-						clearInterval(interval);
-						$.trigger('home:focus');
-					}
-				});
-			}
-		});
+					Dialogs.confirm({
+						title: L('home_error_title'),
+						message: L('home_error_xhr'),
+						yes: L('home_error_yes'),
+						no: L('home_error_no'),
+						callback: function(){
+							clearInterval(interval);
+							$.trigger('home:focus');
+						}
+					});
+				}
+			});
+		}
 	});
 });
 

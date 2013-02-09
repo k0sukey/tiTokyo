@@ -1,19 +1,19 @@
-$.builtby.on('click', function(){
+$.builtby.addEventListener('click', function(){
 	Ti.Platform.openURL('https://twitter.com/k0sukey');
 });
 
-$.specialthanks.on('click', function(){
+$.specialthanks.addEventListener('click', function(){
 	Ti.Platform.openURL('http://titanium-mobile.jp');
 });
 
-$.appcelerator.on('click', function(){
+$.appcelerator.addEventListener('click', function(){
 	Ti.Platform.openURL('http://www.appcelerator.com');
 });
 
-$.denso.on('click', function(){
+$.denso.addEventListener('click', function(){
 	Ti.Platform.openURL('http://www.denso.co.jp');
 });
 
-$.usergroup.on('click', function(){
+$.usergroup.addEventListener('click', function(){
 	Ti.Platform.openURL('http://titanium-mobile.jp');
 });

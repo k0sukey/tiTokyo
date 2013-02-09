@@ -21,6 +21,10 @@ Custom Objects data format.
 
 
 ## Changelog
+### 9 Feb 2013
+* Dealing with Alloy 1.0.0
+* Changed tab position for Android
+
 ### 5 Feb 2013
 * home, agenda, speaker data get from ACS
 
@@ -29,7 +33,7 @@ Custom Objects data format.
 * Fixed Android bug
 
 ### 30 Jan 2013
-* Dealing with toggle in-call status bar height change event
+* Dealing with toggle in-call status bar height change event for iOS
 
 ### 28 Jan 2013
 * Added new speaker

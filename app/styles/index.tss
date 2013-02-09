@@ -4,9 +4,12 @@
 	backgroundImage: '/images/background.png',
 	backgroundRepeat: true
 },
-'#content': {
+'#content[platform=ios]': {
 	top: '65dp',
 	bottom: '46dp'
+},
+'#content[platform=android]': {
+	top: '111dp'
 },
 '#modal': {
 	top: '65dp',

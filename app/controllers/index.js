@@ -3,9 +3,6 @@ var Animation = require('alloy/animation');
 // GPS purpose
 Ti.Geolocation.purpose = L('gps_purpose');
 
-// Progress view is Alloy.Globals...
-Alloy.Globals.progress = $.progress;
-
 $.navigation.on('navigation:logo', function(e){
 	if (e.visibled) {
 		// Page dismiss
@@ -39,7 +36,9 @@ $.navigation.on('navigation:logo', function(e){
 
 // Change event of tab and page
 $.tab.on('tab:change', function(e){
-	var next = Alloy.createController(e.after);
+	var next = Alloy.createController(e.after, {
+		parent: $
+	});
 	$.content.add(next.getView());
 
 	current.trigger(e.before + ':blur');
@@ -56,7 +55,9 @@ $.tab.on('tab:change', function(e){
 });
 
 // Progress events(show / dismiss)
-$.progress.on('progress:show', function(callback){
+$.on('progress:show', function(e){
+	e = e || {};
+
 	$.progress.applyProperties({
 		opacity: 1,
 		touchEnabled: true
@@ -68,13 +69,15 @@ $.progress.on('progress:show', function(callback){
 	}, function(){
 		$.indicator.show();
 
-		if (callback) {
-			callback();
+		if (e.callback) {
+			e.callback();
 		}
 	});
 });
 
-$.progress.on('progress:dismiss', function(callback){
+$.on('progress:dismiss', function(e){
+	e = e || {};
+
 	$.indicator.hide();
 	$.shadow.animate({
 		opacity: 0,
@@ -85,8 +88,8 @@ $.progress.on('progress:dismiss', function(callback){
 			touchEnabled: false
 		});
 
-		if (callback) {
-			callback();
+		if (e.callback) {
+			e.callback();
 		}
 	});
 });
@@ -97,7 +100,9 @@ $.index.open();
 // Current tab and page setting
 var tab = 'home';
 
-var current = Alloy.createController('home');
+var current = Alloy.createController('home', {
+	parent: $
+});
 current.getView().applyProperties({
 	opacity: 1
 });
@@ -111,7 +116,7 @@ if (OS_IOS) {
 	var TiDisplay = require('be.k0suke.tidisplay');
 	var statusBarHeight = TiDisplay.mainScreenHeight - TiDisplay.applicationFrameHeight;
 
-	$.index.on('changelayout', function(){
+	$.index.addEventListener('changelayout', function(){
 		var changedHeight = TiDisplay.mainScreenHeight - TiDisplay.applicationFrameHeight;
 
 		if (statusBarHeight !== changedHeight) {
