@@ -21,6 +21,10 @@ Custom Objects data format.
 
 
 ## Changelog
+### 23 Feb 2013
+* Wrote comments in the source code :D
+* Fixed GPS bug
+
 ### 9 Feb 2013
 * Dealing with Alloy 1.0.0
 * Changed tab position for Android

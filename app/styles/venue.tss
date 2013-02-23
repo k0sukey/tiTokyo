@@ -44,7 +44,7 @@
 	},
 	animate: true,
 	regionFit: true,
-	userLocation: true
+	userLocation: false
 },
 '#annotation': {
 	latitude: 35.662331,

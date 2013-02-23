@@ -2,9 +2,7 @@ var args = arguments[0] || {};
 
 var Animation = require('alloy/animation');
 var Dialogs = require('alloy/dialogs');
-var Social = require('alloy/social');
-
-var twitter = Social.create({
+var Social = require('alloy/social').create({
 	consumerKey: Ti.App.Properties.getString('twitter-consumerKey'),
 	consumerSecret: Ti.App.Properties.getString('twitter-consumerSecret')
 });
@@ -36,13 +34,14 @@ function doPost() {
 			var share = (function(){
 				args.parent.trigger('progress:show', {
 					callback: function(){
-						twitter.share({
+						Social.share({
 							message: e.message,
 							success: function(e){
 								args.parent.trigger('progress:dismiss');
 							},
 							error: function(e){
 								args.parent.trigger('progress:dismiss', function(){
+									// Show retry dialog
 									Dialogs.confirm({
 										title: L('timeline_error_title'),
 										message: L('timeline_error_post'),
@@ -72,19 +71,24 @@ function doPost() {
 }
 
 $.buttonpost.addEventListener('click', function(){
-	if (!twitter.isAuthorized()) {
-		twitter.authorize(doPost);
+	if (!Social.isAuthorized()) {
+		// Twitter OAuth authorize
+		Social.authorize(doPost);
 	} else {
+		// Show tweet view
 		doPost();
 	}
 });
 
+// Timeline tab focus event
 $.on('timeline:focus', function(){
 	$.container.applyProperties({
 		scrollingEnabled: true
 	});
 
+	// Network online check
 	if (!Ti.Network.online) {
+		// Show retry dialog
 		Dialogs.confirm({
 			title: L('timeline_error_title'),
 			message: L('timeline_error_network'),
@@ -118,6 +122,7 @@ $.on('timeline:focus', function(){
 				error: function(collection, data){
 					args.parent.trigger('progress:dismiss');
 
+					// Show retry dialog
 					Dialogs.confirm({
 						title: L('timeline_error_title'),
 						message: L('timeline_error_xhr'),
@@ -133,12 +138,14 @@ $.on('timeline:focus', function(){
 	});
 });
 
+// Timeline tab blur event
 $.on('timeline:blur', function(){
 	$.container.applyProperties({
 		scrollingEnabled: false
 	});
 });
 
+// Dealign with toggle in-call status bar
 if (OS_IOS) {
 	$.on('timeline:layout', function(){
 		$.container.applyProperties({

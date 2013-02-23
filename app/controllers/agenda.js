@@ -3,12 +3,15 @@ var args = arguments[0] || {};
 var Animation = require('alloy/animation');
 var Dialogs = require('alloy/dialogs');
 
+// Agenda tab focus event
 $.on('agenda:focus', function(){
 	$.container.applyProperties({
 		scrollingEnabled: true
 	});
 
+	// Network online check
 	if (!Ti.Network.online) {
+		// Show retry dialog
 		Dialogs.confirm({
 			title: L('agenda_error_title'),
 			message: L('agenda_error_network'),
@@ -22,6 +25,7 @@ $.on('agenda:focus', function(){
 		return;
 	}
 
+	// Agenda data from ACS / CustomObjects
 	args.parent.trigger('progress:show', {
 		callback: function(){
 			var agenda = Alloy.createCollection('agenda');
@@ -33,6 +37,7 @@ $.on('agenda:focus', function(){
 					order: '-started_at'
 				},
 				success: function(collection, data){
+					// Suck ACS sort bug
 					data.reverse();
 
 					_.each(data, function(item){
@@ -46,6 +51,7 @@ $.on('agenda:focus', function(){
 				error: function(collection, data){
 					args.parent.trigger('progress:dismiss');
 
+					// Show retry dialog
 					Dialogs.confirm({
 						title: L('agenda_error_title'),
 						message: L('agenda_error_xhr'),
@@ -61,12 +67,14 @@ $.on('agenda:focus', function(){
 	});
 });
 
+// Agenda tab blur event
 $.on('agenda:blur', function(){
 	$.container.applyProperties({
 		scrollingEnabled: false
 	});
 });
 
+// Dealign with toggle in-call status bar
 if (OS_IOS) {
 	$.on('agenda:layout', function(){
 		$.container.applyProperties({

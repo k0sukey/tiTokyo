@@ -61,7 +61,6 @@
     <modules>
         <module platform="commonjs">ti.cloud</module>
         <module platform="iphone">be.k0suke.tidisplay</module>
-        <module platform="android" version="1.0">ti.physicalSizeCategory</module>
     </modules>
     <deployment-targets>
         <target device="blackberry">false</target>

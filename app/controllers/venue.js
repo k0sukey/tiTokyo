@@ -1,11 +1,25 @@
 var args = arguments[0] || {};
 
-$.map.selectAnnotation($.annotation);
+// Venue tab focus event
+$.on('venue:focus', function(){
+	// Annotation set
+	$.map.selectAnnotation($.annotation);
 
-$.on('venue:focus', function(){});
+	// GPS on
+	$.map.applyProperties({
+		userLocation: true
+	});
+});
 
-$.on('venue:blur', function(){});
+// Venue tab blur event
+$.on('venue:blur', function(){
+	// GPS off
+	$.map.applyProperties({
+		userLocation: false
+	});
+});
 
+// Dealign with toggle in-call status bar
 if (OS_IOS) {
 	$.on('venue:layout', function(){
 		$.container.applyProperties({
